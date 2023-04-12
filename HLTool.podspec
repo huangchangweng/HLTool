@@ -32,53 +32,53 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'HLTool/Classes/**/*'
   
-  s.subspec 'Alert' do |ss|
-    ss.source_files = 'HLTool/Classes/Alert/*.{h,m}'
+#  s.subspec 'Alert' do |ss|
+#    ss.source_files = 'HLTool/Classes/Alert/*.{h,m}'
 #    ss.dependency 'HLTool/Classes/Core'
-  end
-
-  s.subspec 'Core' do |ss|
-    ss.source_files = 'HLTool/Classes/Core/*.{h,m}'
-  end
-  
-  s.subspec 'EmptyDataSet' do |ss|
-    ss.source_files = 'HLTool/Classes/EmptyDataSet/*.{h,m}'
+#  end
+#
+#  s.subspec 'Core' do |ss|
+#    ss.source_files = 'HLTool/Classes/Core/*.{h,m}'
+#  end
+#
+#  s.subspec 'EmptyDataSet' do |ss|
+#    ss.source_files = 'HLTool/Classes/EmptyDataSet/*.{h,m}'
 #    ss.dependency 'HLTool/Classes/Core'
-  end
-  
-  s.subspec 'HUD' do |ss|
-    ss.source_files = 'HLTool/Classes/HUD/*.{h,m}'
+#  end
+#
+#  s.subspec 'HUD' do |ss|
+#    ss.source_files = 'HLTool/Classes/HUD/*.{h,m}'
 #    ss.dependency 'HLTool/Classes/Core'
-  end
-  
-  s.subspec 'IBInspectable' do |ss|
-    ss.source_files = 'HLTool/Classes/IBInspectable/*.{h,m}'
-  end
-  
-  s.subspec 'LoadingView' do |ss|
-    ss.source_files = 'HLTool/Classes/LoadingView/*.{h,m}'
+#  end
+#
+#  s.subspec 'IBInspectable' do |ss|
+#    ss.source_files = 'HLTool/Classes/IBInspectable/*.{h,m}'
+#  end
+#
+#  s.subspec 'LoadingView' do |ss|
+#    ss.source_files = 'HLTool/Classes/LoadingView/*.{h,m}'
 #    ss.dependency 'HLTool/Classes/Core'
-  end
-  
-  s.subspec 'Network' do |ss|
-    ss.source_files = 'HLTool/Classes/Network/*.{h,m}'
+#  end
+#
+#  s.subspec 'Network' do |ss|
+#    ss.source_files = 'HLTool/Classes/Network/*.{h,m}'
 #    ss.dependency 'HLTool/Classes/Core'
-  end
-  
-  s.subspec 'Photo' do |ss|
-    ss.source_files = 'HLTool/Classes/Photo/*.{h,m}'
+#  end
+#
+#  s.subspec 'Photo' do |ss|
+#    ss.source_files = 'HLTool/Classes/Photo/*.{h,m}'
 #    ss.dependency 'HLTool/Classes/Core'
-  end
-  
-  s.subspec 'Popup' do |ss|
-    ss.source_files = 'HLTool/Classes/Popup/*.{h,m}'
+#  end
+#
+#  s.subspec 'Popup' do |ss|
+#    ss.source_files = 'HLTool/Classes/Popup/*.{h,m}'
 #    ss.dependency 'HLTool/Classes/Core'
-  end
-  
-  s.subspec 'Refresh' do |ss|
-    ss.source_files = 'HLTool/Classes/Refresh/*.{h,m}'
+#  end
+#
+#  s.subspec 'Refresh' do |ss|
+#    ss.source_files = 'HLTool/Classes/Refresh/*.{h,m}'
 #    ss.dependency 'HLTool/Classes/Core'
-  end
+#  end
     
     # s.resource_bundles = {
     #   'HLTool' => ['HLTool/Assets/*.png']
