@@ -1,6 +1,6 @@
 {
   "name": "HLTool",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "iOS开发工具类集合",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/huangchangweng/HLTool",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/huangchangweng/HLTool.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "10.0"
@@ -54,5 +54,47 @@
     "AFNetworking": [
       "~> 4.0.1"
     ]
-  }
+  },
+  "subspecs": [
+    {
+      "name": "Alert",
+      "source_files": "HLTool/Classes/Alert/*.{h,m}"
+    },
+    {
+      "name": "Core",
+      "source_files": "HLTool/Classes/Core/*.{h,m}"
+    },
+    {
+      "name": "EmptyDataSet",
+      "source_files": "HLTool/Classes/EmptyDataSet/*.{h,m}"
+    },
+    {
+      "name": "HUD",
+      "source_files": "HLTool/Classes/HUD/*.{h,m}"
+    },
+    {
+      "name": "IBInspectable",
+      "source_files": "HLTool/Classes/IBInspectable/*.{h,m}"
+    },
+    {
+      "name": "LoadingView",
+      "source_files": "HLTool/Classes/LoadingView/*.{h,m}"
+    },
+    {
+      "name": "Network",
+      "source_files": "HLTool/Classes/Network/*.{h,m}"
+    },
+    {
+      "name": "Photo",
+      "source_files": "HLTool/Classes/Photo/*.{h,m}"
+    },
+    {
+      "name": "Popup",
+      "source_files": "HLTool/Classes/Popup/*.{h,m}"
+    },
+    {
+      "name": "Refresh",
+      "source_files": "HLTool/Classes/Refresh/*.{h,m}"
+    }
+  ]
 }

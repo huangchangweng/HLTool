@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HLTool'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'iOS开发工具类集合'
 
 # This description is used to generate tags and improve search results.
@@ -31,6 +31,58 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'HLTool/Classes/**/*'
+  
+  s.subspec 'Alert' do |ss|
+    ss.source_files = 'HLTool/Classes/Alert/*.{h,m}'
+#    ss.dependency 'HLTool/Classes/Core'
+  end
+
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'HLTool/Classes/Core/*.{h,m}'
+  end
+  
+  s.subspec 'EmptyDataSet' do |ss|
+    ss.source_files = 'HLTool/Classes/EmptyDataSet/*.{h,m}'
+#    ss.dependency 'HLTool/Classes/Core'
+  end
+  
+  s.subspec 'HUD' do |ss|
+    ss.source_files = 'HLTool/Classes/HUD/*.{h,m}'
+#    ss.dependency 'HLTool/Classes/Core'
+  end
+  
+  s.subspec 'IBInspectable' do |ss|
+    ss.source_files = 'HLTool/Classes/IBInspectable/*.{h,m}'
+  end
+  
+  s.subspec 'LoadingView' do |ss|
+    ss.source_files = 'HLTool/Classes/LoadingView/*.{h,m}'
+#    ss.dependency 'HLTool/Classes/Core'
+  end
+  
+  s.subspec 'Network' do |ss|
+    ss.source_files = 'HLTool/Classes/Network/*.{h,m}'
+#    ss.dependency 'HLTool/Classes/Core'
+  end
+  
+  s.subspec 'Photo' do |ss|
+    ss.source_files = 'HLTool/Classes/Photo/*.{h,m}'
+#    ss.dependency 'HLTool/Classes/Core'
+  end
+  
+  s.subspec 'Popup' do |ss|
+    ss.source_files = 'HLTool/Classes/Popup/*.{h,m}'
+#    ss.dependency 'HLTool/Classes/Core'
+  end
+  
+  s.subspec 'Refresh' do |ss|
+    ss.source_files = 'HLTool/Classes/Refresh/*.{h,m}'
+#    ss.dependency 'HLTool/Classes/Core'
+  end
+    
+    # s.resource_bundles = {
+    #   'HLTool' => ['HLTool/Assets/*.png']
+    # }
   
   # s.resource_bundles = {
   #   'HLTool' => ['HLTool/Assets/*.png']
