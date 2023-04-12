@@ -1,6 +1,6 @@
 {
   "name": "HLTool",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "summary": "iOS开发工具类集合",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/huangchangweng/HLTool",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/huangchangweng/HLTool.git",
-    "tag": "0.3.0"
+    "tag": "0.4.0"
   },
   "platforms": {
     "ios": "10.0"

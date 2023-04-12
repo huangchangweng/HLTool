@@ -15,7 +15,7 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - DZNEmptyDataSet (1.8.1)
-  - HLTool (0.3.0):
+  - HLTool (0.4.0):
     - AFNetworking (~> 4.0.1)
     - DZNEmptyDataSet (~> 1.8.1)
     - HXPhotoPicker (~> 3.2.1)
@@ -68,7 +68,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  HLTool: e452057707d1e52efc146442742483522c1ad898
+  HLTool: 4a72f42d10397f5b11633758a0b66725801fe67b
   HXPhotoPicker: 907b36ce7c2cbeca947aebaeca76ec063709aaa8
   JHUD: 17650f65045d9843a7ad19f6a0b1eac6c78a45d2
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
