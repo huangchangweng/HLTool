@@ -46,6 +46,7 @@
 {
     NSString *text = @"";
     switch (self.hl_emptyDataSetType) {
+        case HLEmptyDataSetTypeNone: text = @""; break;
         case HLEmptyDataSetTypeNoData: text = self.hl_noDataText; break;
         case HLEmptyDataSetTypeCustomError: text = self.hl_customErrorText; break;
     }
@@ -112,6 +113,11 @@
     if (self.hl_emptyDataSetTapButtonBlock) {
         self.hl_emptyDataSetTapButtonBlock();
     }
+}
+
+- (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView
+{
+    return self.hl_emptyDataSetType != HLEmptyDataSetTypeNone;
 }
 
 #pragma mark - Getter And Setter

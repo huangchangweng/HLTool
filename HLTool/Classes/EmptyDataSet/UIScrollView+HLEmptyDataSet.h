@@ -9,6 +9,7 @@
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
 typedef NS_ENUM(NSInteger, HLEmptyDataSetType) {
+    HLEmptyDataSetTypeNone,         ///< 默认
     HLEmptyDataSetTypeNoData,       ///< 没有数据
     HLEmptyDataSetTypeCustomError,  ///< 自定义错误
 };
