@@ -5,7 +5,7 @@ iOS开发工具类集合
 ##### 支持使用CocoaPods引入, Podfile文件中添加:
 
 ```objc
-pod 'HLTool', '0.4.0'
+pod 'HLTool', '0.5.0'
 ```
 
 如果想全局替换HLTool的图片资源，可以在工程中新建一个名字为`HLTool.bundle`的bundle，参照pod中`HLTool.bundle`为图片资源命名。HLCategorys会优先加载当前工程中的图片资源。
