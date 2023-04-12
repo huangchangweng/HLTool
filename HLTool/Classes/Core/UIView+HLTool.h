@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (HLTools)
+@interface UIView (HLTool)
 
 #pragma mark - Frame
 

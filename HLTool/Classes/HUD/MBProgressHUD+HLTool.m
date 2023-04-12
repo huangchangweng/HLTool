@@ -1,13 +1,13 @@
 //
 //  MBProgressHUD+HHTool.m
-//  HLTools
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
 
 
-#import "MBProgressHUD+HLTools.h"
-#import "UIWindow+HLTools.h"
+#import "MBProgressHUD+HLTool.h"
+#import "UIWindow+HLTool.h"
 #import "HLDefine.h"
 
 const NSInteger hideTime = 2;

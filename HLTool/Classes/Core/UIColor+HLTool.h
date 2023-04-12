@@ -1,6 +1,6 @@
 //
 //  UIColor+HHTool.h
-//  HLTools
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIColor (HLTools)
+@interface UIColor (HLTool)
 
 + (UIColor *)hl_fromShortHexValue:(NSUInteger)hex;
 + (UIColor *)hl_fromShortHexValue:(NSUInteger)hex alpha:(CGFloat)alpha;

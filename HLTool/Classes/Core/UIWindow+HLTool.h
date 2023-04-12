@@ -1,6 +1,6 @@
 //
-//  UIWindow+HLTools.h
-//  HLTools
+//  UIWindow+HLTool.h
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIWindow (HLTools)
+@interface UIWindow (HLTool)
 
 - (UIViewController *)currentTopViewController;
 

@@ -1,6 +1,6 @@
 //
 //  HLPopupTool.m
-//  HLTools
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
@@ -8,7 +8,7 @@
 #import "HLPopupTool.h"
 #import "HLUtils.h"
 #import "HLPopupListView.h"
-#import "UIWindow+HLTools.h"
+#import "UIWindow+HLTool.h"
 #import "HLDefine.h"
 
 @interface HLPopupTool () <YBPopupMenuDelegate>

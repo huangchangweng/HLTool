@@ -1,13 +1,13 @@
 //
 //  HLToastTool.m
-//  HLTools
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
 
 
 #import "HLToastTool.h"
-#import "UIWindow+HLTools.h"
+#import "UIWindow+HLTool.h"
 #import <Toast/Toast.h>
 
 @implementation HLToastTool

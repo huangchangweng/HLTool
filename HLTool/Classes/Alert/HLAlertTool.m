@@ -1,12 +1,12 @@
 //
 //  HLAlertTool.m
-//  HLTools
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
 
 #import "HLAlertTool.h"
-#import "UIWindow+HLTools.h"
+#import "UIWindow+HLTool.h"
 #import "HLDefine.h"
 
 @implementation HLAlertTool

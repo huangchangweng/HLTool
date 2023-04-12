@@ -1,6 +1,6 @@
 //
-//  NSBundle+HLTools.h
-//  HLTools
+//  NSBundle+HLTool.h
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
@@ -9,11 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSBundle (HLTools)
+@interface NSBundle (HLTool)
 
 + (instancetype)hlResourceBundle;
 
-+ (UIImage *)imageForHLTools:(NSString *)name;
++ (UIImage *)imageForHLTool:(NSString *)name;
 
 + (NSString *)getToolFilePath:(NSString *)name type:(NSString *)type;
 

@@ -1,6 +1,6 @@
 //
 //  MBProgressHUD+HHTool.h
-//  HLTools
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MBProgressHUD (HLTools)
+@interface MBProgressHUD (HLTool)
 
 + (void)show;
 + (void)show:(NSString *)message;

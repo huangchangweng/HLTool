@@ -1,24 +1,24 @@
 //
-//  NSBundle+HLTools.m
-//  HLTools
+//  NSBundle+HLTool.m
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
 
-#import "NSBundle+HLTools.h"
+#import "NSBundle+HLTool.h"
 #import "HLDefine.h"
 
-@implementation NSBundle (HLTools)
+@implementation NSBundle (HLTool)
 
 + (instancetype)hlResourceBundle
 {
     static NSBundle *hlBundle = nil;
     if (hlBundle == nil) {
-        NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"HLTools")];
-        NSURL *bundleURL = [bundle URLForResource:@"HLTools" withExtension:@"bundle"];
+        NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"HLTool")];
+        NSURL *bundleURL = [bundle URLForResource:@"HLTool" withExtension:@"bundle"];
         NSBundle *resourceBundle = [NSBundle bundleWithURL:bundleURL];
         if (!resourceBundle) {
-            NSString *bundlePath = [bundle.resourcePath stringByAppendingPathComponent:@"HLTools.bundle"];
+            NSString *bundlePath = [bundle.resourcePath stringByAppendingPathComponent:@"HLTool.bundle"];
             resourceBundle = [NSBundle bundleWithPath:bundlePath];
         }
         hlBundle = resourceBundle ?: bundle;
@@ -26,7 +26,7 @@
     return hlBundle;
 }
 
-+ (UIImage *)imageForHLTools:(NSString *)name
++ (UIImage *)imageForHLTool:(NSString *)name
 {
     NSString *path = [[[NSBundle hlResourceBundle] resourcePath] stringByAppendingPathComponent:name];
     UIImage *image = [UIImage imageWithContentsOfFile:path];

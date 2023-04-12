@@ -1,13 +1,13 @@
 //
-//  UIWindow+HLTools.m
-//  HLTools
+//  UIWindow+HLTool.m
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
 
-#import "UIWindow+HLTools.h"
+#import "UIWindow+HLTool.h"
 
-@implementation UIWindow (HLTools)
+@implementation UIWindow (HLTool)
 
 + (UIWindow *)hl_keyWindow {
     if (@available(iOS 13.0, *)) {

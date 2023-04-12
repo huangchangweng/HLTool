@@ -1,6 +1,6 @@
 //
 //  HLDefine.h
-//  HLTools
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
@@ -49,7 +49,7 @@ isBangsScreen; \
 #   define HLLog(...)
 #endif
 
-#import "NSBundle+HLTools.h"
+#import "NSBundle+HLTool.h"
 
 typedef NS_ENUM(NSUInteger, HLLanguageType) {
     //跟随系统语言，默认
@@ -71,7 +71,7 @@ static inline NSString *GetLocalLanguageTextValue(NSString *key) {
 }
 
 static inline UIImage *GetImageWithName(NSString *name) {
-    return [NSBundle imageForHLTools:name];
+    return [NSBundle imageForHLTool:name];
 }
 
 static inline HLLanguageType GetLanguageType() {

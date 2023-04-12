@@ -1,13 +1,13 @@
 //
 //  UIColor+HHTool.m
-//  HLTools
+//  HLTool
 //
 //  Created by feige on 2023/4/11.
 //
 
-#import "UIColor+HLTools.h"
+#import "UIColor+HLTool.h"
 
-@implementation UIColor (HLTools)
+@implementation UIColor (HLTool)
 
 + (UIColor *)hl_fromShortHexValue:(NSUInteger)hex {
     return [UIColor hl_fromShortHexValue:hex alpha:1.0f];

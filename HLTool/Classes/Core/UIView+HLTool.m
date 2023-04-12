@@ -5,9 +5,9 @@
 //  Created by JJB_iOS on 2022/5/26.
 //
 
-#import "UIView+HLTools.h"
+#import "UIView+HLTool.h"
 
-@implementation UIView (HLTools)
+@implementation UIView (HLTool)
 
 #pragma mark - Frame
 
