@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'HLTool_Example' do
+  pod 'HLTool', :path => '../'
+
+  target 'HLTool_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

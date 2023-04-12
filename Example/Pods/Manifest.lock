@@ -1,0 +1,84 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - DZNEmptyDataSet (1.8.1)
+  - HLTool (0.1.0):
+    - AFNetworking (~> 4.0.1)
+    - DZNEmptyDataSet (~> 1.8.1)
+    - HXPhotoPicker (~> 3.2.1)
+    - HXPhotoPicker/SDWebImage_AF (~> 3.2.1)
+    - JHUD (~> 0.3.0)
+    - MBProgressHUD (~> 1.2.0)
+    - MJRefresh (~> 3.7.5)
+    - SPAlertController (~> 4.0.0)
+    - Toast (~> 4.0.0)
+    - YBPopupMenu (~> 1.1.9)
+    - YYCache (~> 1.0.4)
+  - HXPhotoPicker (3.2.9):
+    - HXPhotoPicker/Default (= 3.2.9)
+  - HXPhotoPicker/Default (3.2.9)
+  - HXPhotoPicker/SDWebImage_AF (3.2.9):
+    - AFNetworking
+    - SDWebImage (~> 5.0)
+  - JHUD (0.3.0)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.7.5)
+  - SDWebImage (5.15.5):
+    - SDWebImage/Core (= 5.15.5)
+  - SDWebImage/Core (5.15.5)
+  - SPAlertController (4.0.0)
+  - Toast (4.0.0)
+  - YBPopupMenu (1.1.9)
+  - YYCache (1.0.4)
+
+DEPENDENCIES:
+  - HLTool (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - DZNEmptyDataSet
+    - HXPhotoPicker
+    - JHUD
+    - MBProgressHUD
+    - MJRefresh
+    - SDWebImage
+    - SPAlertController
+    - Toast
+    - YBPopupMenu
+    - YYCache
+
+EXTERNAL SOURCES:
+  HLTool:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  HLTool: 11bd5fe7498f0efa429668f748b94ed226221616
+  HXPhotoPicker: 907b36ce7c2cbeca947aebaeca76ec063709aaa8
+  JHUD: 17650f65045d9843a7ad19f6a0b1eac6c78a45d2
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
+  SPAlertController: b245d7a5e17d612da051f2612aca3703f21d108f
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  YBPopupMenu: 3a02e89860bb0568ba477aee609bc3f25e5bd339
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+
+PODFILE CHECKSUM: fef0354e63af5af91f2f8ecf56e2918551a89634
+
+COCOAPODS: 1.11.3

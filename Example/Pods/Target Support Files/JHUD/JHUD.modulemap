@@ -1,0 +1,6 @@
+framework module JHUD {
+  umbrella header "JHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}
