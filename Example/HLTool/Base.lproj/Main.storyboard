@@ -40,11 +40,93 @@
                     <navigationItem key="navigationItem" title="HLTool" id="5sW-GK-PVi"/>
                     <connections>
                         <segue destination="bZS-56-zlH" kind="show" id="pIH-y8-RxD"/>
+                        <segue destination="ZDY-Un-2nX" kind="show" id="ihg-re-AFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1126" y="432"/>
+        </scene>
+        <!--Photo-->
+        <scene sceneID="lFJ-2D-jVW">
+            <objects>
+                <viewController storyboardIdentifier="HLPhotoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZDY-Un-2nX" customClass="HLPhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D1x-Aj-rlc"/>
+                        <viewControllerLayoutGuide type="bottom" id="xQC-8x-qSP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JMa-Cb-Xda">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="44" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="isK-DU-1xG">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="CPw-id-gCl">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浏览网络图" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxH-HE-KAz">
+                                            <rect key="frame" x="20" y="20" width="82" height="19.5"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uJP-od-6j9">
+                                            <rect key="frame" x="20" y="60" width="335" height="100"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fZQ-El-VsU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="105" height="100"/>
+                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MIP-rU-MFf">
+                                                    <rect key="frame" x="115" y="0.0" width="105" height="100"/>
+                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" tag="2" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rwr-23-geZ">
+                                                    <rect key="frame" x="230" y="0.0" width="105" height="100"/>
+                                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="qaV-c2-47K"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="uJP-od-6j9" firstAttribute="top" secondItem="CPw-id-gCl" secondAttribute="top" constant="60" id="4Ou-s0-EHC"/>
+                                        <constraint firstAttribute="trailing" secondItem="uJP-od-6j9" secondAttribute="trailing" constant="20" id="JM9-wJ-8W9"/>
+                                        <constraint firstItem="uJP-od-6j9" firstAttribute="leading" secondItem="CPw-id-gCl" secondAttribute="leading" constant="20" id="Sxa-tF-eLp"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="nxH-HE-KAz" secondAttribute="trailing" constant="20" symbolic="YES" id="a0p-ie-3ED"/>
+                                        <constraint firstItem="nxH-HE-KAz" firstAttribute="leading" secondItem="CPw-id-gCl" secondAttribute="leading" constant="20" id="cKp-Zp-PPs"/>
+                                        <constraint firstItem="nxH-HE-KAz" firstAttribute="top" secondItem="CPw-id-gCl" secondAttribute="top" constant="20" id="qIy-0U-LOw"/>
+                                    </constraints>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZDY-Un-2nX" id="odu-Hk-0fe"/>
+                                    <outlet property="delegate" destination="ZDY-Un-2nX" id="LoL-Pu-JkR"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="isK-DU-1xG" firstAttribute="top" secondItem="D1x-Aj-rlc" secondAttribute="bottom" id="Ja5-H8-xaH"/>
+                            <constraint firstAttribute="trailing" secondItem="isK-DU-1xG" secondAttribute="trailing" id="LhD-bm-40I"/>
+                            <constraint firstItem="xQC-8x-qSP" firstAttribute="top" secondItem="isK-DU-1xG" secondAttribute="bottom" id="Q2G-L4-BZ3"/>
+                            <constraint firstItem="isK-DU-1xG" firstAttribute="leading" secondItem="JMa-Cb-Xda" secondAttribute="leading" id="iCT-of-Eag"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo" id="Cv3-cF-1G7"/>
+                    <connections>
+                        <outletCollection property="imageViews" destination="fZQ-El-VsU" id="8sU-M4-ocS"/>
+                        <outletCollection property="imageViews" destination="MIP-rU-MFf" id="yLJ-5F-YHU"/>
+                        <outletCollection property="imageViews" destination="Rwr-23-geZ" id="B1G-hW-mSx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BcE-UM-2wW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1909.5999999999999" y="703.89805097451278"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fHg-ID-paI">
@@ -103,6 +185,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

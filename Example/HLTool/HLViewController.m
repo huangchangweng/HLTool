@@ -40,8 +40,38 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    NSString *text = self.dataArray[indexPath.row];
-    if ([text isEqualToString:@"Alert"]) {
+    // Alert
+    if (indexPath.row == 0) {
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    // EmptyDataSet & Refresh
+    else if (indexPath.row == 1) {
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    // HUD
+    else if (indexPath.row == 2) {
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    // IBInspectable
+    else if (indexPath.row == 3) {
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    // LoadingView
+    else if (indexPath.row == 4) {
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    // Photo
+    else if (indexPath.row == 5) {
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLPhotoViewController"];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    // Popup
+    else if (indexPath.row == 6) {
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
