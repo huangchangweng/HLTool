@@ -409,13 +409,82 @@
                     <navigationItem key="navigationItem" title="LoadingView" id="sDz-XM-tlO"/>
                     <connections>
                         <outlet property="tableView" destination="uyA-5s-Vp8" id="1c1-EO-ZVz"/>
+                        <segue destination="AaB-gk-Ccw" kind="show" id="quT-ym-PPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DMR-vu-zNg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3486" y="704"/>
         </scene>
+        <!--Popup-->
+        <scene sceneID="e8H-L9-yag">
+            <objects>
+                <viewController storyboardIdentifier="HLPopupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AaB-gk-Ccw" customClass="HLPopupViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JAe-ut-NcP"/>
+                        <viewControllerLayoutGuide type="bottom" id="4qk-Jz-SVK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9ad-CU-hv3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6pt-CC-hdE">
+                                <rect key="frame" x="165" y="144" width="45" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Popup"/>
+                                <connections>
+                                    <action selector="popupAction:" destination="AaB-gk-Ccw" eventType="touchUpInside" id="WE5-AE-rsb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtN-xT-q7B">
+                                <rect key="frame" x="151" y="229" width="73" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Popup List"/>
+                                <connections>
+                                    <action selector="popupListAction:" destination="AaB-gk-Ccw" eventType="touchUpInside" id="Zgf-tE-PKd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6pt-CC-hdE" firstAttribute="top" secondItem="JAe-ut-NcP" secondAttribute="bottom" constant="100" id="NMQ-mj-21W"/>
+                            <constraint firstItem="EtN-xT-q7B" firstAttribute="centerX" secondItem="6pt-CC-hdE" secondAttribute="centerX" id="XaB-bP-qQy"/>
+                            <constraint firstItem="6pt-CC-hdE" firstAttribute="centerX" secondItem="9ad-CU-hv3" secondAttribute="centerX" id="YFe-gq-hyx"/>
+                            <constraint firstItem="EtN-xT-q7B" firstAttribute="top" secondItem="6pt-CC-hdE" secondAttribute="bottom" constant="55" id="nlo-sp-Qq0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Popup" id="dWW-Hy-eig">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Kmp-JY-Frs">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="FAo-nl-Hg9">
+                                <rect key="frame" x="315" y="0.0" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="-15" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="..."/>
+                                <connections>
+                                    <action selector="navRightAction:" destination="AaB-gk-Ccw" eventType="touchUpInside" id="Nvy-Gx-bs6"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bcd-gz-0MX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4284" y="704"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="Of8-XH-kpM">
+            <size key="intrinsicContentSize" width="1080" height="1439"/>
+        </designable>
+        <designable name="jUC-Kf-Gpp">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+        </designable>
+        <designable name="rPp-39-IhA">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
     <resources>
         <image name="2" width="1080" height="1439"/>
         <systemColor name="systemBackgroundColor">

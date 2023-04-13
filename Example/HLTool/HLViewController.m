@@ -72,7 +72,7 @@
     }
     // Popup
     else if (indexPath.row == 6) {
-        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLPopupViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     
