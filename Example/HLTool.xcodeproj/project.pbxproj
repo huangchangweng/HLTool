@@ -24,6 +24,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		E63A69A529E7B3D100ADD44B /* HLAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A69A429E7B3D100ADD44B /* HLAlertViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		BCA1F140E96BFCE19D2C7211 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		CFE1938E529607049F48BA56 /* Pods-HLTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HLTool_Example.debug.xcconfig"; path = "Target Support Files/Pods-HLTool_Example/Pods-HLTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E5E9E9F905C32E4623FEB893 /* HLTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HLTool.podspec; path = ../HLTool.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E63A69A329E7B3D100ADD44B /* HLAlertViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLAlertViewController.h; sourceTree = "<group>"; };
+		E63A69A429E7B3D100ADD44B /* HLAlertViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLAlertViewController.m; sourceTree = "<group>"; };
 		EF7C88114AACF0B0CDF07E1C /* Pods_HLTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,6 +140,7 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* HLViewController.h */,
 				6003F5A6195388D20070C39A /* HLViewController.m */,
+				E63A69A229E7B39A00ADD44B /* Demo */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -194,6 +198,15 @@
 				239C067227C735D44C5D9E5F /* Pods-HLTool_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E63A69A229E7B39A00ADD44B /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				E63A69A329E7B3D100ADD44B /* HLAlertViewController.h */,
+				E63A69A429E7B3D100ADD44B /* HLAlertViewController.m */,
+			);
+			name = Demo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,6 +400,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* HLAppDelegate.m in Sources */,
+				E63A69A529E7B3D100ADD44B /* HLAlertViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* HLViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
