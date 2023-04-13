@@ -57,7 +57,7 @@
     }
     // IBInspectable
     else if (indexPath.row == 3) {
-        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLIBInspectableViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     // LoadingView

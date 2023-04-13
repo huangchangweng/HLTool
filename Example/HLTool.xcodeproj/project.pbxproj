@@ -28,6 +28,7 @@
 		E63A69A829E7D24C00ADD44B /* HLPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A69A729E7D24C00ADD44B /* HLPhotoViewController.m */; };
 		E63A69AB29E7DB7600ADD44B /* HLHUDAndToastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A69AA29E7DB7600ADD44B /* HLHUDAndToastViewController.m */; };
 		E63A69AE29E7DF3500ADD44B /* HLEmptyDataSetRefreshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A69AD29E7DF3500ADD44B /* HLEmptyDataSetRefreshViewController.m */; };
+		E63A69B129E7E0D000ADD44B /* HLIBInspectableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E63A69B029E7E0D000ADD44B /* HLIBInspectableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		E63A69AA29E7DB7600ADD44B /* HLHUDAndToastViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLHUDAndToastViewController.m; sourceTree = "<group>"; };
 		E63A69AC29E7DF3500ADD44B /* HLEmptyDataSetRefreshViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLEmptyDataSetRefreshViewController.h; sourceTree = "<group>"; };
 		E63A69AD29E7DF3500ADD44B /* HLEmptyDataSetRefreshViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLEmptyDataSetRefreshViewController.m; sourceTree = "<group>"; };
+		E63A69AF29E7E0D000ADD44B /* HLIBInspectableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HLIBInspectableViewController.h; sourceTree = "<group>"; };
+		E63A69B029E7E0D000ADD44B /* HLIBInspectableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HLIBInspectableViewController.m; sourceTree = "<group>"; };
 		EF7C88114AACF0B0CDF07E1C /* Pods_HLTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HLTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -220,6 +223,8 @@
 				E63A69AA29E7DB7600ADD44B /* HLHUDAndToastViewController.m */,
 				E63A69A629E7D24C00ADD44B /* HLPhotoViewController.h */,
 				E63A69A729E7D24C00ADD44B /* HLPhotoViewController.m */,
+				E63A69AF29E7E0D000ADD44B /* HLIBInspectableViewController.h */,
+				E63A69B029E7E0D000ADD44B /* HLIBInspectableViewController.m */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 			files = (
 				6003F59E195388D20070C39A /* HLAppDelegate.m in Sources */,
 				E63A69A529E7B3D100ADD44B /* HLAlertViewController.m in Sources */,
+				E63A69B129E7E0D000ADD44B /* HLIBInspectableViewController.m in Sources */,
 				E63A69AB29E7DB7600ADD44B /* HLHUDAndToastViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* HLViewController.m in Sources */,
 				E63A69A829E7D24C00ADD44B /* HLPhotoViewController.m in Sources */,
