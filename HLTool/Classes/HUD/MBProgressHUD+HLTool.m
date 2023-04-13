@@ -17,12 +17,14 @@ const NSInteger hideTime = 2;
 + (void)show {
     [self show:GetLocalLanguageTextValue(@"LoadingWaiting")];
 }
+
 + (void)show:(NSString *)message {
     [self show:message view:nil];
 }
+
 + (void)show:(NSString *)message view:(UIView *)view {
     if (!view) {
-        view = [UIWindow hl_keyWindow];
+        view = [UIWindow topViewController].view;
     }
     MBProgressHUD *hud = [self createMBProgressHUD:view];
     hud.label.text = message;

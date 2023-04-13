@@ -50,9 +50,9 @@
         UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
-    // HUD
+    // HUD & Toast
     else if (indexPath.row == 2) {
-        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLHUDAndToastViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     // IBInspectable
@@ -83,7 +83,7 @@
 
 - (NSArray *)dataArray {
     if (!_dataArray) {
-        _dataArray = @[@"Alert", @"EmptyDataSet & Refresh", @"HUD", @"IBInspectable", @"LoadingView", @"Photo", @"Popup"];
+        _dataArray = @[@"Alert", @"EmptyDataSet & Refresh", @"HUD & Toast", @"IBInspectable", @"LoadingView", @"Photo", @"Popup"];
     }
     return _dataArray;
 }

@@ -2,7 +2,7 @@
 "Cancel" = "取消";
 "Tips" = "提示";
 "Done" = "確定";
-"LoadingWaiting" = "請稍後";
+"LoadingWaiting" = "請稍後...";
 "Save" = "保存";
 "SaveSuccess" = "保存成功";
 "SaveFailure" = "保存失敗";

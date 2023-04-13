@@ -176,10 +176,48 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Alert" id="4cf-Lt-BaT"/>
+                    <connections>
+                        <segue destination="1Tp-AH-5Ep" kind="show" id="I5c-oi-K61"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Pp-Tw-0pf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1911" y="13"/>
+        </scene>
+        <!--HUD & Toast-->
+        <scene sceneID="mbK-EZ-W1R">
+            <objects>
+                <viewController storyboardIdentifier="HLHUDAndToastViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Tp-AH-5Ep" customClass="HLHUDAndToastViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3rA-xl-y3n"/>
+                        <viewControllerLayoutGuide type="bottom" id="XJ5-BW-sSx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="POU-Jq-vif">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="44" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="rVo-ZA-RUI">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1Tp-AH-5Ep" id="F1o-Lv-fUL"/>
+                                    <outlet property="delegate" destination="1Tp-AH-5Ep" id="3mB-w7-Jip"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XJ5-BW-sSx" firstAttribute="top" secondItem="rVo-ZA-RUI" secondAttribute="bottom" id="EaU-RW-ycY"/>
+                            <constraint firstItem="rVo-ZA-RUI" firstAttribute="top" secondItem="3rA-xl-y3n" secondAttribute="bottom" id="Tcx-KZ-Zix"/>
+                            <constraint firstAttribute="trailing" secondItem="rVo-ZA-RUI" secondAttribute="trailing" id="WxL-XU-Cei"/>
+                            <constraint firstItem="rVo-ZA-RUI" firstAttribute="leading" secondItem="POU-Jq-vif" secondAttribute="leading" id="eCF-IV-ji1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="HUD &amp; Toast" id="Hbj-cT-7s2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ilp-5I-p6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2690" y="12"/>
         </scene>
     </scenes>
     <resources>
