@@ -62,7 +62,7 @@
     }
     // LoadingView
     else if (indexPath.row == 4) {
-        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLLoadingViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     // Photo

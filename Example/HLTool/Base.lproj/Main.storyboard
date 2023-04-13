@@ -237,6 +237,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="IBInspectable" id="nKU-RG-jbw"/>
+                    <connections>
+                        <segue destination="VeB-RK-7dz" kind="show" id="Wqo-ud-UYt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3mT-We-TaF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -373,6 +376,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nxe-15-Kpl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3486" y="12"/>
+        </scene>
+        <!--LoadingView-->
+        <scene sceneID="0FH-0M-uqP">
+            <objects>
+                <viewController storyboardIdentifier="HLLoadingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VeB-RK-7dz" customClass="HLLoadingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Chb-Ga-AH6"/>
+                        <viewControllerLayoutGuide type="bottom" id="f4p-xo-KNK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fOK-Et-vdR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="44" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uyA-5s-Vp8">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="VeB-RK-7dz" id="omp-v2-PdQ"/>
+                                    <outlet property="delegate" destination="VeB-RK-7dz" id="2I0-fP-Yaj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uyA-5s-Vp8" secondAttribute="trailing" id="1Pm-jd-k9W"/>
+                            <constraint firstItem="uyA-5s-Vp8" firstAttribute="top" secondItem="Chb-Ga-AH6" secondAttribute="bottom" id="CPf-Jl-Xun"/>
+                            <constraint firstItem="f4p-xo-KNK" firstAttribute="top" secondItem="uyA-5s-Vp8" secondAttribute="bottom" id="gnT-K3-zc5"/>
+                            <constraint firstItem="uyA-5s-Vp8" firstAttribute="leading" secondItem="fOK-Et-vdR" secondAttribute="leading" id="uZu-mL-s2w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="LoadingView" id="sDz-XM-tlO"/>
+                    <connections>
+                        <outlet property="tableView" destination="uyA-5s-Vp8" id="1c1-EO-ZVz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DMR-vu-zNg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3486" y="704"/>
         </scene>
     </scenes>
     <resources>
