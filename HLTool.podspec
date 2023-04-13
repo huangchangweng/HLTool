@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HLTool'
-  s.version          = '0.5.0'
+  s.version          = '0.5.1'
   s.summary          = 'iOS开发工具类集合'
 
 # This description is used to generate tags and improve search results.
@@ -103,7 +103,6 @@ TODO: Add long description of the pod here.
   s.dependency 'DZNEmptyDataSet', '~> 1.8.1'
   s.dependency 'MJRefresh', '~> 3.7.5'
   s.dependency 'YYCache', '~> 1.0.4'
-  s.dependency 'MJRefresh', '~> 3.7.5'
   s.dependency 'JHUD', '~> 0.3.0'
   s.dependency 'AFNetworking', '~> 4.0.1'
   

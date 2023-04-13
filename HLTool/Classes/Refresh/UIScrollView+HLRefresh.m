@@ -63,7 +63,12 @@
     self.mj_header = header;
    
     if (footerBlock) {
+        __weak __typeof__(self) weakSelf = self;
         MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            if (weakSelf.mj_header.isRefreshing) {
+                [weakSelf hl_footerEndRefreshing];
+                return;
+            }
             if (footerBlock) {
                 footerBlock();
             }
