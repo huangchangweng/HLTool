@@ -47,7 +47,7 @@
     }
     // EmptyDataSet & Refresh
     else if (indexPath.row == 1) {
-        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLAlertViewController"];
+        UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"HLEmptyDataSetRefreshViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
     // HUD & Toast

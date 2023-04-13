@@ -214,10 +214,51 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="HUD &amp; Toast" id="Hbj-cT-7s2"/>
+                    <connections>
+                        <segue destination="Y57-3v-OCr" kind="show" id="7sH-tP-hxJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ilp-5I-p6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2690" y="12"/>
+        </scene>
+        <!--EmptyDataSet & Refresh-->
+        <scene sceneID="0Z8-ZX-dSn">
+            <objects>
+                <viewController storyboardIdentifier="HLEmptyDataSetRefreshViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y57-3v-OCr" customClass="HLEmptyDataSetRefreshViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dGr-TR-aFm"/>
+                        <viewControllerLayoutGuide type="bottom" id="idk-Gg-CN2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SNj-2K-jIp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="44" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="naa-0T-snX">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y57-3v-OCr" id="SDs-9r-Zq8"/>
+                                    <outlet property="delegate" destination="Y57-3v-OCr" id="pop-bg-1I5"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="naa-0T-snX" firstAttribute="leading" secondItem="SNj-2K-jIp" secondAttribute="leading" id="4g8-5e-MUW"/>
+                            <constraint firstItem="idk-Gg-CN2" firstAttribute="top" secondItem="naa-0T-snX" secondAttribute="bottom" id="dRP-Rn-QHu"/>
+                            <constraint firstAttribute="trailing" secondItem="naa-0T-snX" secondAttribute="trailing" id="nrd-lw-tat"/>
+                            <constraint firstItem="naa-0T-snX" firstAttribute="top" secondItem="dGr-TR-aFm" secondAttribute="bottom" id="ysj-fs-id7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="EmptyDataSet &amp; Refresh" id="EgA-nf-FJz"/>
+                    <connections>
+                        <outlet property="tableView" destination="naa-0T-snX" id="tTZ-hz-wnb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nxe-15-Kpl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3486" y="12"/>
         </scene>
     </scenes>
     <resources>
