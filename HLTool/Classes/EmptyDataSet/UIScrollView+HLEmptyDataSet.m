@@ -13,7 +13,6 @@
 #import "UIScrollView+HLEmptyDataSet.h"
 #import <objc/runtime.h>
 #import <SystemConfiguration/SystemConfiguration.h>
-#import "HLRefreshGifHeader.h"
 #import "HLDefine.h"
 
 @interface UIScrollView()

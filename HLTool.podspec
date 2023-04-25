@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HLTool'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'iOS开发工具类集合'
 
 # This description is used to generate tags and improve search results.
@@ -81,7 +81,8 @@ TODO: Add long description of the pod here.
   # Photo
   s.subspec 'Photo' do |ss|
     ss.source_files = 'HLTool/Classes/Photo/*.{h,m}'
-    ss.dependency 'HLTool/Core'
+    ss.dependency 'HLTool/Alert'
+    ss.dependency 'HLTool/HUD'
     ss.dependency 'HXPhotoPicker', '~> 3.2.1'
     ss.dependency 'HXPhotoPicker/SDWebImage_AF', '~> 3.2.1'
   end
@@ -89,7 +90,7 @@ TODO: Add long description of the pod here.
   # Popup
   s.subspec 'Popup' do |ss|
     ss.source_files = 'HLTool/Classes/Popup/*.{h,m}'
-    ss.dependency 'HLTool/Core'
+    ss.dependency 'HLTool/Alert'
     ss.dependency 'YBPopupMenu', '~> 1.1.9'
   end
 
@@ -99,7 +100,5 @@ TODO: Add long description of the pod here.
     ss.dependency 'HLTool/Core'
     ss.dependency 'MJRefresh', '~> 3.7.5'
   end
-  
-  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
 
 end
