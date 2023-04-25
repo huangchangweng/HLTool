@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HLTool'
-  s.version          = '1.0.2'
+  s.version          = '1.0.4'
   s.summary          = 'iOS开发工具类集合'
 
 # This description is used to generate tags and improve search results.
@@ -97,7 +97,7 @@ TODO: Add long description of the pod here.
   s.subspec 'Refresh' do |ss|
     ss.source_files = 'HLTool/Classes/Refresh/*.{h,m}'
     ss.dependency 'HLTool/Core'
-    s.dependency 'MJRefresh', '~> 3.7.5'
+    ss.dependency 'MJRefresh', '~> 3.7.5'
   end
   
   s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
