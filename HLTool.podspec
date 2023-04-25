@@ -100,4 +100,6 @@ TODO: Add long description of the pod here.
     s.dependency 'MJRefresh', '~> 3.7.5'
   end
   
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
+
 end
