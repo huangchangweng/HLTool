@@ -15,7 +15,7 @@ const NSInteger hideTime = 2;
 @implementation MBProgressHUD (HHTool)
 
 + (void)show {
-    [self show:GetLocalLanguageTextValue(@"LoadingWaiting")];
+    [self show:GetLocalLanguageTextValue(@"Loading")];
 }
 
 + (void)show:(NSString *)message {

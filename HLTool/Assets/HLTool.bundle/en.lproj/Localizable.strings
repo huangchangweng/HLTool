@@ -2,7 +2,7 @@
 "Cancel" = "Cancel";
 "Tips" = "Tips";
 "Done" = "Done";
-"LoadingWaiting" = "Please waiting...";
+"Loading" = "Loading...";
 "Save" = "Save";
 "SaveSuccess" = "Saved successfully";
 "SaveFailed" = "Save failed";

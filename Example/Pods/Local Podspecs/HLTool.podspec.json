@@ -1,6 +1,6 @@
 {
   "name": "HLTool",
-  "version": "0.5.1",
+  "version": "1.0.1",
   "summary": "iOS开发工具类集合",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/huangchangweng/HLTool",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/huangchangweng/HLTool.git",
-    "tag": "0.5.1"
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "10.0"
@@ -21,38 +21,120 @@
   "source_files": "HLTool/Classes/**/*",
   "resources": "HLTool/Assets/*.{png,xib,nib,bundle}",
   "dependencies": {
-    "Toast": [
-      "~> 4.0.0"
-    ],
-    "SPAlertController": [
-      "~> 4.0.0"
-    ],
-    "MBProgressHUD": [
-      "~> 1.2.0"
-    ],
-    "HXPhotoPicker": [
-      "~> 3.2.1"
-    ],
-    "HXPhotoPicker/SDWebImage_AF": [
-      "~> 3.2.1"
-    ],
-    "YBPopupMenu": [
-      "~> 1.1.9"
-    ],
-    "DZNEmptyDataSet": [
-      "~> 1.8.1"
-    ],
     "MJRefresh": [
       "~> 3.7.5"
-    ],
-    "YYCache": [
-      "~> 1.0.4"
-    ],
-    "JHUD": [
-      "~> 0.3.0"
-    ],
-    "AFNetworking": [
-      "~> 4.0.1"
     ]
-  }
+  },
+  "subspecs": [
+    {
+      "name": "Alert",
+      "source_files": "HLTool/Classes/Alert/*.{h,m}",
+      "dependencies": {
+        "HLTool/Core": [
+
+        ],
+        "SPAlertController": [
+          "~> 4.0.0"
+        ]
+      }
+    },
+    {
+      "name": "Core",
+      "source_files": "HLTool/Classes/Core/*.{h,m}"
+    },
+    {
+      "name": "EmptyDataSet",
+      "source_files": "HLTool/Classes/EmptyDataSet/*.{h,m}",
+      "dependencies": {
+        "HLTool/Core": [
+
+        ],
+        "DZNEmptyDataSet": [
+          "~> 1.8.1"
+        ]
+      }
+    },
+    {
+      "name": "HUD",
+      "source_files": "HLTool/Classes/HUD/*.{h,m}",
+      "dependencies": {
+        "HLTool/Core": [
+
+        ],
+        "Toast": [
+          "~> 4.0.0"
+        ],
+        "MBProgressHUD": [
+          "~> 1.2.0"
+        ]
+      }
+    },
+    {
+      "name": "IBInspectable",
+      "source_files": "HLTool/Classes/IBInspectable/*.{h,m}"
+    },
+    {
+      "name": "LoadingView",
+      "source_files": "HLTool/Classes/LoadingView/*.{h,m}",
+      "dependencies": {
+        "HLTool/Core": [
+
+        ],
+        "JHUD": [
+          "~> 0.3.0"
+        ]
+      }
+    },
+    {
+      "name": "Network",
+      "source_files": "HLTool/Classes/Network/*.{h,m}",
+      "dependencies": {
+        "HLTool/Core": [
+
+        ],
+        "YYCache": [
+          "~> 1.0.4"
+        ],
+        "AFNetworking": [
+          "~> 4.0.1"
+        ]
+      }
+    },
+    {
+      "name": "Photo",
+      "source_files": "HLTool/Classes/Photo/*.{h,m}",
+      "dependencies": {
+        "HLTool/Core": [
+
+        ],
+        "HXPhotoPicker": [
+          "~> 3.2.1"
+        ],
+        "HXPhotoPicker/SDWebImage_AF": [
+          "~> 3.2.1"
+        ]
+      }
+    },
+    {
+      "name": "Popup",
+      "source_files": "HLTool/Classes/Popup/*.{h,m}",
+      "dependencies": {
+        "HLTool/Core": [
+
+        ],
+        "YBPopupMenu": [
+          "~> 1.1.9"
+        ]
+      }
+    },
+    {
+      "name": "Refresh",
+      "source_files": "HLTool/Classes/Refresh/*.{h,m}",
+      "dependencies": {
+        "HLTool/Core": [
+
+        ]
+      }
+    }
+  ]
 }

@@ -44,6 +44,10 @@ iOS 9.0 +, Xcode 7.0 +
 
 # Version
 
+* 1.0.1:
+  
+  添加子目录
+
 * 1.0.0:
   
   修改NSBundle问题

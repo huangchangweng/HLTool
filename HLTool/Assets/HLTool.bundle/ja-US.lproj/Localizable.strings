@@ -2,7 +2,7 @@
 "Cancel" = "取り消し";
 "Tips" = "ヒント";
 "Done" = "を選択します";
-"LoadingWaiting" = "ちょっと待ってください...";
+"Loading" = "ロード中...";
 "Save" = "保存";
 "SaveSuccess" = "保存に成功しました";
 "SaveFailure" = "保存に失敗しました";
