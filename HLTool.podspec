@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HLTool'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'iOS开发工具类集合'
 
 # This description is used to generate tags and improve search results.
@@ -31,16 +31,16 @@ TODO: Add long description of the pod here.
   s.source_files = 'HLTool/Classes/**/*'
   s.resources   = 'HLTool/Assets/*.{png,xib,nib,bundle}'
   
+  # Core
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'HLTool/Classes/Core/*.{h,m}'
+  end
+  
   # Alert
   s.subspec 'Alert' do |ss|
     ss.source_files = 'HLTool/Classes/Alert/*.{h,m}'
     ss.dependency 'HLTool/Core'
     ss.dependency 'SPAlertController', '~> 4.0.0'
-  end
-
-  # Core
-  s.subspec 'Core' do |ss|
-    ss.source_files = 'HLTool/Classes/Core/*.{h,m}'
   end
 
   # EmptyDataSet
