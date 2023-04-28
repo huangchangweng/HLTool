@@ -5,7 +5,7 @@ iOS开发工具类集合
 ##### 支持使用CocoaPods引入, Podfile文件中添加:
 
 ```objc
-pod 'HLTool', '1.0.5'
+pod 'HLTool', '1.0.6'
 ```
 
 如果想全局替换HLTool的图片资源，可以在工程中新建一个名字为`HLTool.bundle`的bundle，参照pod中`HLTool.bundle`为图片资源命名。HLCategorys会优先加载当前工程中的图片资源。
@@ -43,6 +43,10 @@ iOS 9.0 +, Xcode 7.0 +
 - "AFNetworking", "4.0.1"
 
 # Version
+
+* 1.0.6:
+  
+  优化子目录
 
 * 1.0.5:
   

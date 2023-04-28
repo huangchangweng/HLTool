@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HLTool'
-  s.version          = '1.0.5'
+  s.version          = '1.0.6'
   s.summary          = 'iOS开发工具类集合'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'HLTool/Classes/**/*'
+  s.source_files = 'HLTool/Classes/HLTool.h'
   s.resources   = 'HLTool/Assets/*.{png,xib,nib,bundle}'
   
   # Core
