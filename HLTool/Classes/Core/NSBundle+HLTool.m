@@ -14,7 +14,7 @@
 {
     static NSBundle *hlBundle = nil;
     if (hlBundle == nil) {
-        NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"HLAlertTool")];
+        NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"HLConfiguration")];
         NSURL *bundleURL = [bundle URLForResource:@"HLTool" withExtension:@"bundle"];
         NSBundle *resourceBundle = [NSBundle bundleWithURL:bundleURL];
         if (!resourceBundle) {
