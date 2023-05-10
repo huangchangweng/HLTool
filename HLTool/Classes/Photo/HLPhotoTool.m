@@ -155,8 +155,9 @@
                 
                 HHPhotoModel *pModel = [HHPhotoModel modelWithImage:model.previewPhoto video:nil data:nil type:HHPhotoModelMediaTypePhoto];
 
-                if (completion) {
+                if (completion && pModel) {
                     completion(@[pModel]);
+                    return;
                 }
                 
                 [self getPhoto:model success:^(HHPhotoModel *photo) {

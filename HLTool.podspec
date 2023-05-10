@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HLTool'
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   s.summary          = 'iOS开发工具类集合'
 
 # This description is used to generate tags and improve search results.
