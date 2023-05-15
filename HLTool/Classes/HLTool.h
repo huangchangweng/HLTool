@@ -24,6 +24,7 @@
 #import "UIScrollView+HLEmptyDataSet.h"
 
 // HUD
+#import "HLHUD.h"
 #import "HLToastTool.h"
 #import "MBProgressHUD+HLTool.h"
 

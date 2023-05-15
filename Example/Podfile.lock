@@ -15,45 +15,45 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - DZNEmptyDataSet (1.8.1)
-  - HLTool (1.0.7):
-    - HLTool/Alert (= 1.0.7)
-    - HLTool/Core (= 1.0.7)
-    - HLTool/EmptyDataSet (= 1.0.7)
-    - HLTool/HUD (= 1.0.7)
-    - HLTool/IBInspectable (= 1.0.7)
-    - HLTool/LoadingView (= 1.0.7)
-    - HLTool/Network (= 1.0.7)
-    - HLTool/Photo (= 1.0.7)
-    - HLTool/Popup (= 1.0.7)
-    - HLTool/Refresh (= 1.0.7)
-  - HLTool/Alert (1.0.7):
+  - HLTool (1.0.9):
+    - HLTool/Alert (= 1.0.9)
+    - HLTool/Core (= 1.0.9)
+    - HLTool/EmptyDataSet (= 1.0.9)
+    - HLTool/HUD (= 1.0.9)
+    - HLTool/IBInspectable (= 1.0.9)
+    - HLTool/LoadingView (= 1.0.9)
+    - HLTool/Network (= 1.0.9)
+    - HLTool/Photo (= 1.0.9)
+    - HLTool/Popup (= 1.0.9)
+    - HLTool/Refresh (= 1.0.9)
+  - HLTool/Alert (1.0.9):
     - HLTool/Core
     - SPAlertController (~> 4.0.0)
-  - HLTool/Core (1.0.7)
-  - HLTool/EmptyDataSet (1.0.7):
+  - HLTool/Core (1.0.9)
+  - HLTool/EmptyDataSet (1.0.9):
     - DZNEmptyDataSet (~> 1.8.1)
     - HLTool/Core
-  - HLTool/HUD (1.0.7):
+  - HLTool/HUD (1.0.9):
     - HLTool/Core
     - MBProgressHUD (~> 1.2.0)
     - Toast (~> 4.0.0)
-  - HLTool/IBInspectable (1.0.7)
-  - HLTool/LoadingView (1.0.7):
+  - HLTool/IBInspectable (1.0.9)
+  - HLTool/LoadingView (1.0.9):
     - HLTool/Core
     - JHUD (~> 0.3.0)
-  - HLTool/Network (1.0.7):
+  - HLTool/Network (1.0.9):
     - AFNetworking (~> 4.0.1)
     - HLTool/Core
     - YYCache (~> 1.0.4)
-  - HLTool/Photo (1.0.7):
+  - HLTool/Photo (1.0.9):
     - HLTool/Alert
     - HLTool/HUD
     - HXPhotoPicker (~> 3.2.1)
     - HXPhotoPicker/SDWebImage_AF (~> 3.2.1)
-  - HLTool/Popup (1.0.7):
+  - HLTool/Popup (1.0.9):
     - HLTool/Alert
     - YBPopupMenu (~> 1.1.9)
-  - HLTool/Refresh (1.0.7):
+  - HLTool/Refresh (1.0.9):
     - HLTool/Core
     - MJRefresh (~> 3.7.5)
   - HXPhotoPicker (3.2.9):
@@ -97,7 +97,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  HLTool: 0fe0eb38c3a8111e4e175ade590a5fed1495b4f0
+  HLTool: fe286445e1eb3d120ab327054c5ba84399f9c732
   HXPhotoPicker: 907b36ce7c2cbeca947aebaeca76ec063709aaa8
   JHUD: 17650f65045d9843a7ad19f6a0b1eac6c78a45d2
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406

@@ -21,6 +21,7 @@
 #import "UIView+HLTool.h"
 #import "UIWindow+HLTool.h"
 #import "UIScrollView+HLEmptyDataSet.h"
+#import "HLHUD.h"
 #import "HLToastTool.h"
 #import "MBProgressHUD+HLTool.h"
 #import "HLButton.h"

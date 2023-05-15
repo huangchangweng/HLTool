@@ -46,6 +46,12 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2), dispatch_get_main_queue(), ^{
             [MBProgressHUD hide];
         });
+        
+        // 另一种风格（白色背景）
+//        [HLHUD showLoading:nil];
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2), dispatch_get_main_queue(), ^{
+//            [HLHUD hide];
+//        });
     }
     // + (void)show:(NSString *)message
     else if (indexPath.row == 1) {
