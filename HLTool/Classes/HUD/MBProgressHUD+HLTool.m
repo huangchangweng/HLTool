@@ -68,6 +68,8 @@ const NSInteger hideTime = 2;
     if (!view) {
         view = [UIWindow hl_keyWindow];
     }
+    [self hide];
+    
     MBProgressHUD *hud = [self createMBProgressHUD:view];
     hud.label.text = message;
     hud.customView = [[UIImageView alloc] initWithImage:icon];
@@ -78,7 +80,6 @@ const NSInteger hideTime = 2;
 + (MBProgressHUD *)createMBProgressHUD:(UIView *)view {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.minSize = CGSizeMake(100, 100);
-    hud.label.font = [UIFont systemFontOfSize:17];
     hud.label.numberOfLines = 0;
     hud.label.textColor = [UIColor whiteColor];
     hud.contentColor = [UIColor whiteColor];

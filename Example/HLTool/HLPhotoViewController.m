@@ -70,17 +70,17 @@
     if (indexPath.row == 0) {
         [HLPhotoTool sheetPortraitWithController:self
                                            title:@"头像"
-                                      completion:^(HHPhotoModel * _Nonnull model) {
+                                      completion:^(HLPhotoModel * _Nonnull model) {
             
         }];
     }
-    // heet 相册|拍照
+    // sheet 相册|拍照
     else if (indexPath.row == 1) {
         [HLPhotoTool sheetImagePickerWithController:self
                                               title:@"相册|拍照"
-                                              count:2
+                                              count:1
                                                edit:NO
-                                         completion:^(NSArray<HHPhotoModel *> * _Nonnull images) {
+                                         completion:^(NSArray<HLPhotoModel *> * _Nonnull images) {
             
         }];
     }
@@ -89,7 +89,7 @@
         [HLPhotoTool imagePickerSingleWithController:self
                                         seletedVideo:NO
                                                 edit:NO
-                                          completion:^(HHPhotoModel * _Nonnull model) {
+                                          completion:^(HLPhotoModel * _Nonnull model) {
             
         }];
     }
@@ -98,7 +98,7 @@
         [HLPhotoTool imagePickerMultipleWithController:self
                                                  count:3
                                           seletedVideo:NO
-                                            completion:^(NSArray<HHPhotoModel *> * _Nonnull images) {
+                                            completion:^(NSArray<HLPhotoModel *> * _Nonnull images) {
             
         }];
     }

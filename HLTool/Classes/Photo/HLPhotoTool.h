@@ -6,23 +6,23 @@
 //
 
 #import <Foundation/Foundation.h>
-@class HHPhotoModel;
+@class HLPhotoModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSUInteger, HHPhotoModelMediaType) {
-    HHPhotoModelMediaTypePhoto          = 0,    //!< 照片
-    HHPhotoModelMediaTypeLivePhoto      = 1,    //!< LivePhoto
-    HHPhotoModelMediaTypePhotoGif       = 2,    //!< gif图
-    HHPhotoModelMediaTypeVideo          = 3,    //!< 视频
-    HHPhotoModelMediaTypeAudio          = 4,    //!< 预留
-    HHPhotoModelMediaTypeCameraPhoto    = 5,    //!< 通过相机拍的临时照片、本地/网络图片
-    HHPhotoModelMediaTypeCameraVideo    = 6,    //!< 通过相机录制的视频、本地视频
-    HHPhotoModelMediaTypeCamera         = 7     //!< 跳转相机
+typedef NS_ENUM(NSUInteger, HLPhotoModelMediaType) {
+    HLPhotoModelMediaTypePhoto          = 0,    //!< 照片
+    HLPhotoModelMediaTypeLivePhoto      = 1,    //!< LivePhoto
+    HLPhotoModelMediaTypePhotoGif       = 2,    //!< gif图
+    HLPhotoModelMediaTypeVideo          = 3,    //!< 视频
+    HLPhotoModelMediaTypeAudio          = 4,    //!< 预留
+    HLPhotoModelMediaTypeCameraPhoto    = 5,    //!< 通过相机拍的临时照片、本地/网络图片
+    HLPhotoModelMediaTypeCameraVideo    = 6,    //!< 通过相机录制的视频、本地视频
+    HLPhotoModelMediaTypeCamera         = 7     //!< 跳转相机
 };
 
-typedef void (^HLPhotoToolCompletion)(HHPhotoModel *model);
-typedef void (^HLPhotoToolMultipleCompletion)(NSArray <HHPhotoModel *> *images);
+typedef void (^HLPhotoToolCompletion)(HLPhotoModel *model);
+typedef void (^HLPhotoToolMultipleCompletion)(NSArray <HLPhotoModel *> *images);
 
 @interface HLPhotoTool : NSObject
 
@@ -81,16 +81,16 @@ typedef void (^HLPhotoToolMultipleCompletion)(NSArray <HHPhotoModel *> *images);
 @end
 
 
-@interface HHPhotoModel : NSObject
+@interface HLPhotoModel : NSObject
 
 @property (nonatomic, strong) UIImage * _Nullable image;
 @property (nonatomic, strong) NSURL * _Nullable videoURL;
 
 @property (nonatomic, strong) NSData * _Nullable data;
 
-@property (nonatomic, assign) HHPhotoModelMediaType type;
+@property (nonatomic, assign) HLPhotoModelMediaType type;
 
-+ (instancetype)modelWithImage:(nullable UIImage *)image video:(nullable NSURL *)video data:(nullable NSData *)data type:(HHPhotoModelMediaType)type;
++ (instancetype)modelWithImage:(nullable UIImage *)image video:(nullable NSURL *)video data:(nullable NSData *)data type:(HLPhotoModelMediaType)type;
 
 @end
 

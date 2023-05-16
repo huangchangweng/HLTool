@@ -18,14 +18,14 @@
     return type;
 }
 
-+ (void)getPhoto:(HXPhotoModel *)model success:(void(^)(HHPhotoModel *photo))success failed:(HXModelFailedBlock)failed {
++ (void)getPhoto:(HXPhotoModel *)model success:(void(^)(HLPhotoModel *photo))success failed:(HXModelFailedBlock)failed {
     
     if (model.subType == HXPhotoModelMediaSubTypePhoto) {
         if (model.type == HXPhotoModelMediaTypePhotoGif) {
             // gif
             [[PHImageManager defaultManager] requestImageDataForAsset:model.asset options:nil resultHandler:^(NSData *imageData, NSString *dataUTI, UIImageOrientation orientation, NSDictionary *info) {
                 
-                HHPhotoModel *pModel = [HHPhotoModel modelWithImage:nil video:nil data:imageData type:HHPhotoModelMediaTypePhotoGif];
+                HLPhotoModel *pModel = [HLPhotoModel modelWithImage:nil video:nil data:imageData type:HLPhotoModelMediaTypePhotoGif];
                 if (success) {
                     success(pModel);
                 }
@@ -35,7 +35,7 @@
             // image
             [model getImageWithSuccess:^(UIImage * _Nullable image, HXPhotoModel * _Nullable model, NSDictionary * _Nullable info) {
                 
-                HHPhotoModel *pModel = [HHPhotoModel modelWithImage:image video:nil data:nil type:HHPhotoModelMediaTypePhoto];
+                HLPhotoModel *pModel = [HLPhotoModel modelWithImage:image video:nil data:nil type:HLPhotoModelMediaTypePhoto];
 
                 if (success) {
                     success(pModel);
@@ -53,7 +53,7 @@
     } else {
         [model getVideoURLWithSuccess:^(NSURL * _Nullable URL, HXPhotoModelMediaSubType mediaType, BOOL isNetwork, HXPhotoModel * _Nullable model) {
             
-            HHPhotoModel *pModel = [HHPhotoModel modelWithImage:nil video:URL data:nil type:HHPhotoModelMediaTypeVideo];
+            HLPhotoModel *pModel = [HLPhotoModel modelWithImage:nil video:URL data:nil type:HLPhotoModelMediaTypeVideo];
 
             if (success) {
                 success(pModel);
@@ -153,14 +153,14 @@
             // 拍照
             [vc hx_presentCustomCameraViewControllerWithManager:photoManager done:^(HXPhotoModel *model, HXCustomCameraViewController *viewController) {
                 
-                HHPhotoModel *pModel = [HHPhotoModel modelWithImage:model.previewPhoto video:nil data:nil type:HHPhotoModelMediaTypePhoto];
+                HLPhotoModel *pModel = [HLPhotoModel modelWithImage:model.previewPhoto video:nil data:nil type:HLPhotoModelMediaTypePhoto];
 
                 if (completion && pModel) {
                     completion(@[pModel]);
                     return;
                 }
                 
-                [self getPhoto:model success:^(HHPhotoModel *photo) {
+                [self getPhoto:model success:^(HLPhotoModel *photo) {
                     if (completion) {
                         completion(@[photo]);
                     }
@@ -173,7 +173,7 @@
                 
                 NSMutableArray *mArr = [NSMutableArray array];
                 for (int i = 0; i < allList.count; i++) {
-                    [self getPhoto:allList[i] success:^(HHPhotoModel *photo) {
+                    [self getPhoto:allList[i] success:^(HLPhotoModel *photo) {
                         
                         [mArr addObject:photo];
                         
@@ -239,7 +239,7 @@
 
         NSMutableArray *mArr = [NSMutableArray array];
         for (int i = 0; i < allList.count; i++) {
-            [self getPhoto:allList[i] success:^(HHPhotoModel *photo) {
+            [self getPhoto:allList[i] success:^(HLPhotoModel *photo) {
                 
                 [mArr addObject:photo];
                 
@@ -280,13 +280,13 @@
             if (video) {
                 NSURL *url = [infoDict objectForKey:UIImagePickerControllerMediaURL]; // 视频路径
                 if (completion && url) {
-                    HHPhotoModel *pModel = [HHPhotoModel modelWithImage:nil video:url data:nil type:HHPhotoModelMediaTypeVideo];
+                    HLPhotoModel *pModel = [HLPhotoModel modelWithImage:nil video:url data:nil type:HLPhotoModelMediaTypeVideo];
                     completion(pModel);
                 }
             } else {
                 UIImage *image = [infoDict valueForKey:UIImagePickerControllerOriginalImage];
                 if (completion && image) {
-                    HHPhotoModel *pModel = [HHPhotoModel modelWithImage:image video:nil data:nil type:HHPhotoModelMediaTypePhoto];
+                    HLPhotoModel *pModel = [HLPhotoModel modelWithImage:image video:nil data:nil type:HLPhotoModelMediaTypePhoto];
                     completion(pModel);
                 }
             }
@@ -574,10 +574,10 @@
 @end
 
 
-@implementation HHPhotoModel
+@implementation HLPhotoModel
 
-+ (instancetype)modelWithImage:(UIImage *)image video:(NSURL *)video data:(NSData *)data type:(HHPhotoModelMediaType)type {
-    HHPhotoModel *model = [[HHPhotoModel alloc] init];
++ (instancetype)modelWithImage:(UIImage *)image video:(NSURL *)video data:(NSData *)data type:(HLPhotoModelMediaType)type {
+    HLPhotoModel *model = [[HLPhotoModel alloc] init];
     model.image = image;
     model.videoURL = video;
     model.data = data;
