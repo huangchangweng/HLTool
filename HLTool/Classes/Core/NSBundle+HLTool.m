@@ -28,11 +28,18 @@
 
 + (UIImage *)imageForHLTool:(NSString *)name
 {
-    NSString *path = [[[NSBundle hlResourceBundle] resourcePath] stringByAppendingPathComponent:name];
-    UIImage *image = [UIImage imageWithContentsOfFile:path];
-    if (!image) {
-        image = [UIImage imageNamed:path];
+    UIImage *image = nil;
+    NSURL *mianBundleURL = [[NSBundle mainBundle] URLForResource:@"HLTool" withExtension:@"bundle"];
+    if (mianBundleURL) {
+        image = [UIImage imageWithContentsOfFile:[[[NSBundle bundleWithURL:mianBundleURL] resourcePath] stringByAppendingPathComponent:name]];
+    } else {
+        NSString *path = [[[NSBundle hlResourceBundle] resourcePath] stringByAppendingPathComponent:name];
+        image = [UIImage imageWithContentsOfFile:path];
+        if (!image) {
+            image = [UIImage imageNamed:path];
+        }
     }
+    
     return image;
 }
 

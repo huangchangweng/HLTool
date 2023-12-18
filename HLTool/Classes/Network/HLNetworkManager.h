@@ -16,6 +16,12 @@ typedef NS_ENUM(NSUInteger, HLRequestType) {
     HLRequestTypeGET,
     /// 设置请求类型为POST
     HLRequestTypePOST,
+    /// 设置请求类型为PUT
+    HLRequestTypePUT,
+    /// 设置请求类型为DELETE
+    HLRequestTypeDELETE,
+    /// 设置请求类型为PATCH
+    HLRequestTypePATCH,
 };
 
 typedef NS_ENUM(NSUInteger, HLRequestSerializerType) {

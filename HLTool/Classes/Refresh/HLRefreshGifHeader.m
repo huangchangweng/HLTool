@@ -7,6 +7,7 @@
 
 #import "HLRefreshGifHeader.h"
 #import "HLDefine.h"
+#import "HLToolImageConfig.h"
 
 @implementation HLRefreshGifHeader
 
@@ -17,9 +18,13 @@
     [super prepare];
     
     NSMutableArray *refreshingImages = [NSMutableArray array];
-    for (NSUInteger i = 1; i<=3; i++) {
-        UIImage *image = GetImageWithName([NSString stringWithFormat:@"loading_%zd", i]);
-        [refreshingImages addObject:image];
+    if ([HLToolImageConfig shared].refreshLodingImages) {
+        [refreshingImages addObjectsFromArray:[HLToolImageConfig shared].refreshLodingImages];
+    } else {
+        for (NSUInteger i = 1; i<=3; i++) {
+            UIImage *image = GetImageWithName([NSString stringWithFormat:@"loading_%zd", i]);
+            [refreshingImages addObject:image];
+        }
     }
     // 设置普通状态的动画图片
     [self setImages:refreshingImages forState:MJRefreshStateIdle];

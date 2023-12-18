@@ -5,7 +5,7 @@ iOS开发工具类集合
 ##### 支持使用CocoaPods引入, Podfile文件中添加:
 
 ```objc
-pod 'HLTool', '1.1.0'
+pod 'HLTool', '1.2.0'
 ```
 
 如果想全局替换HLTool的图片资源，可以在工程中新建一个名字为`HLTool.bundle`的bundle，参照pod中`HLTool.bundle`为图片资源命名。HLCategorys会优先加载当前工程中的图片资源。
@@ -13,6 +13,16 @@ pod 'HLTool', '1.1.0'
 # GlobalSetting
 
 如果您项目中多个地方使用到该组件，您可以全局设置样式，例在`AppDelegate`添加
+
+```objc
+// EmptyDataSet
+[HLToolImageConfig shared].noDataImage = [UIImage imageNamed:@"no_content_empty"];
+// HUD
+// LoadingView
+[HLToolImageConfig shared].lodingImages = lodingImages;
+// Refresh
+[HLToolImageConfig shared].refreshLodingImages = lodingImages;
+```
 
 ```objc
 // 全局设置UIScrollView+HLEmptyDataSet样式
@@ -43,9 +53,16 @@ iOS 9.0 +, Xcode 7.0 +
 - "AFNetworking", "4.0.1"
 
 # Version
+
+- 1.2.0
+  修改在主工程中添加HLTool.bundle无效bug
+  
+  HLTool/Network中添加PUT、DELETE、PATCH请求方式
+  
+  添加HLToolImageConfig类，全局配置HLTool图片资源
 * 1.1.0
   优化HLPhotoTool代码
-  
+
 * 1.0.9
   添加HLHUD类
 

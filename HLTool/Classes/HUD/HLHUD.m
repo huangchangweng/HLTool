@@ -9,6 +9,7 @@
 #import "UIWindow+HLTool.h"
 #import "HLDefine.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "HLToolImageConfig.h"
 
 @implementation HLHUD
 
@@ -53,7 +54,7 @@
 
 + (void)showSuccessMsg:(NSString *)msg
 {
-    UIImage *image = GetImageWithName(@"hud_right");
+    UIImage *image = [HLToolImageConfig shared].hudRightImage ? : GetImageWithName(@"hud_right");
     [self showSuccessMsg:msg image:image];
 }
 

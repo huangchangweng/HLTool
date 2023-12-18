@@ -15,6 +15,7 @@
 #import "HLAlertTool.h"
 #import "HLConfiguration.h"
 #import "HLDefine.h"
+#import "HLToolImageConfig.h"
 #import "HLUtils.h"
 #import "NSBundle+HLTool.h"
 #import "UIColor+HLTool.h"

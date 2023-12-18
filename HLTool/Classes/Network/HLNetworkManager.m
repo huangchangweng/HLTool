@@ -66,13 +66,31 @@ static AFHTTPSessionManager *_sessionManager;
                                   progress:^(NSProgress * _Nonnull downloadProgress) {}
                                    success:success
                                    failure:failure];
-    } else {
+    } else if (type == HLRequestTypePOST) {
         sessionTask = [_sessionManager POST:URL
                                  parameters:parameters
                                     headers:headers
                                    progress:^(NSProgress * _Nonnull downloadProgress) {}
                                     success:success
                                     failure:failure];
+    } else if (type == HLRequestTypePUT) {
+        sessionTask = [_sessionManager PUT:URL
+                                parameters:parameters
+                                   headers:headers
+                                   success:success
+                                   failure:failure];
+    } else if (type == HLRequestTypeDELETE) {
+        sessionTask = [_sessionManager DELETE:URL
+                                   parameters:parameters
+                                      headers:headers
+                                      success:success
+                                      failure:failure];
+    } else {
+        sessionTask = [_sessionManager PATCH:URL
+                                  parameters:parameters
+                                     headers:headers
+                                     success:success
+                                     failure:failure];
     }
     return sessionTask;
 }
@@ -99,6 +117,21 @@ static AFHTTPSessionManager *_sessionManager;
     // 锁操作
     @synchronized(self) {
         [[self allSessionTask]  addObject:task];
+    }
+}
+
++ (NSString *)requestTypeStr:(HLRequestType)type
+{
+    if (type == HLRequestTypeGET) {
+        return @"GET";
+    } else if (type == HLRequestTypePOST) {
+        return @"POST";
+    } else if (type == HLRequestTypePUT) {
+        return @"PUT";
+    } else if (type == HLRequestTypeDELETE) {
+        return @"DELETE";
+    } else {
+        return @"PATCH";
     }
 }
 
@@ -153,13 +186,13 @@ static AFHTTPSessionManager *_sessionManager;
                                success:(HLHttpRequestSuccess)success
                                failure:(HLHttpRequestFailed)failure
 {
-    if (_isOpenLog) {HLLog(@"\n<----%@请求---->\n%@\n%@", type==HLRequestTypeGET?@"GET":@"POST", URL, HLToJson(parameters));}
+    if (_isOpenLog) {HLLog(@"\n<----%@请求---->\n%@\n%@", [self requestTypeStr:type], URL, HLToJson(parameters));}
     
     // 读取缓存
     id cacheObject = [HLNetworkCache httpCacheForURL:URL parameters:parameters];
     if (responseCache && cacheObject) {
         if (responseCache) {responseCache(cacheObject);}
-        if (_isOpenLog) {HLLog(@"\n<----%@缓存返回---->\n%@\n%@", type==HLRequestTypeGET?@"GET":@"POST", URL, HLToJson(cacheObject));}
+        if (_isOpenLog) {HLLog(@"\n<----%@缓存返回---->\n%@\n%@", [self requestTypeStr:type], URL, HLToJson(cacheObject));}
     }
     
     NSURLSessionTask *sessionTask = [self request:type
@@ -168,7 +201,7 @@ static AFHTTPSessionManager *_sessionManager;
                                           headers:headers
                                           success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
         
-        if (_isOpenLog) {HLLog(@"\n<----%@返回结果---->\n%@\n%@", type==HLRequestTypeGET?@"GET":@"POST", URL, HLToJson(responseObject));}
+        if (_isOpenLog) {HLLog(@"\n<----%@返回结果---->\n%@\n%@", [self requestTypeStr:type], URL, HLToJson(responseObject));}
         [[self allSessionTask] removeObject:task];
         success ? success(responseObject) : nil;
         //对数据进行异步缓存
@@ -178,7 +211,7 @@ static AFHTTPSessionManager *_sessionManager;
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
-        if (_isOpenLog) {HLLog(@"\n<----%@请求失败---->\n%@\n%@", type==HLRequestTypeGET?@"GET":@"POST", URL, error);}
+        if (_isOpenLog) {HLLog(@"\n<----%@请求失败---->\n%@\n%@", [self requestTypeStr:type], URL, error);}
         [[self allSessionTask] removeObject:task];
         failure ? failure(error) : nil;
         

@@ -7,6 +7,7 @@
 
 #import "HLLoadingView.h"
 #import "HLDefine.h"
+#import "HLToolImageConfig.h"
 
 @interface HLLoadingView()
 @property (nonatomic, strong) UIButton *backButton;
@@ -17,14 +18,18 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     
     NSMutableArray *lodingImages = [NSMutableArray array];
-    for (int index = 1; index<=3; index++) {
-        UIImage *lodingImage = GetImageWithName([NSString stringWithFormat:@"loading_%d.png",index]);
-        [lodingImages addObject:lodingImage];
+    if ([HLToolImageConfig shared].lodingImages) {
+        [lodingImages addObjectsFromArray:[HLToolImageConfig shared].lodingImages];
+    } else {
+        for (int index = 1; index<=3; index++) {
+            UIImage *lodingImage = GetImageWithName([NSString stringWithFormat:@"loading_%d.png",index]);
+            [lodingImages addObject:lodingImage];
+        }
     }
     
-    UIImage *failureImage = GetImageWithName(@"no_notwork");
-    UIImage *customErrorImage = GetImageWithName(@"server_error");
-    UIImage *backImage = GetImageWithName(@"nav_back_black");
+    UIImage *failureImage = [HLToolImageConfig shared].failureImage ? : GetImageWithName(@"no_notwork");
+    UIImage *customErrorImage = [HLToolImageConfig shared].loadingCustomErrorImage ? : GetImageWithName(@"server_error");
+    UIImage *backImage = [HLToolImageConfig shared].backImage ? : GetImageWithName(@"nav_back_black");
     
     return [self initWithFrame:frame
                   lodingImages:lodingImages

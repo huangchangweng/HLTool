@@ -9,6 +9,7 @@
 #import "MBProgressHUD+HLTool.h"
 #import "UIWindow+HLTool.h"
 #import "HLDefine.h"
+#import "HLToolImageConfig.h"
 
 const NSInteger hideTime = 2;
 
@@ -45,7 +46,7 @@ const NSInteger hideTime = 2;
 }
 
 + (void)showSuccess:(NSString *)success duration:(NSUInteger)time view:(UIView *)view {
-    [self showCustomIcon:GetImageWithName(@"hud_success") message:success duration:time view:view];
+    [self showCustomIcon:[HLToolImageConfig shared].hudSuccessImage ? : GetImageWithName(@"hud_success") message:success duration:time view:view];
 }
 
 + (void)showError:(NSString *)error {
@@ -61,7 +62,7 @@ const NSInteger hideTime = 2;
 }
 
 + (void)showError:(NSString *)error duration:(NSUInteger)time view:(UIView *)view {
-    [self showCustomIcon:GetImageWithName(@"hud_error") message:error duration:time view:view];
+    [self showCustomIcon:[HLToolImageConfig shared].hudErrorImage ? : GetImageWithName(@"hud_error") message:error duration:time view:view];
 }
 
 + (void)showCustomIcon:(UIImage *)icon message:(NSString *)message duration:(NSUInteger)time view:(UIView *)view {

@@ -14,6 +14,7 @@
 
 // Core
 #import "HLConfiguration.h"
+#import "HLToolImageConfig.h"
 #import "HLDefine.h"
 #import "HLUtils.h"
 #import "UIColor+HLTool.h"

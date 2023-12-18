@@ -14,6 +14,7 @@
 #import <objc/runtime.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 #import "HLDefine.h"
+#import "HLToolImageConfig.h"
 
 @interface UIScrollView()
 @property (nonatomic, copy)void(^hl_emptyDataSetBlock)(void);
@@ -139,7 +140,7 @@ static char *kHLEmptyDataSetTapButtonBlockkey = "kHLEmptyDataSetTapButtonBlockke
 }
 
 - (UIImage *)hl_noDataImage {
-    return objc_getAssociatedObject(self, &kHLEmptyDataSetNoDataImagekey)?:kHLEmptyDataSetNoDataImage;
+    return objc_getAssociatedObject(self, &kHLEmptyDataSetNoDataImagekey)?:[HLToolImageConfig shared].noDataImage?:kHLEmptyDataSetNoDataImage;
 }
 
 - (void)setHl_customErrorImage:(UIImage *)hl_customErrorImage {
@@ -148,7 +149,7 @@ static char *kHLEmptyDataSetTapButtonBlockkey = "kHLEmptyDataSetTapButtonBlockke
 }
 
 - (UIImage *)hl_customErrorImage {
-    return objc_getAssociatedObject(self, &kHLEmptyDataSetCustomErrorImagekey) ? : kHLEmptyDataSetCustomErrorImage;
+    return objc_getAssociatedObject(self, &kHLEmptyDataSetCustomErrorImagekey)?:[HLToolImageConfig shared].customErrorImage ? : kHLEmptyDataSetCustomErrorImage;
 }
 
 - (void)setHl_noDataText:(NSString *)hl_noDataText {
