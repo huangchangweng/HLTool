@@ -13,11 +13,6 @@
 
 @implementation HLHUD
 
-+ (void)initialize {
-    [MBProgressHUD appearance].contentColor = [UIColor blackColor];
-    [MBProgressHUD appearance].animationType = MBProgressHUDAnimationZoomOut;
-}
-
 #pragma mark - Private Method
 
 + (UIView *)inView

@@ -54,6 +54,9 @@ iOS 9.0 +, Xcode 7.0 +
 
 # Version
 
+- 1.2.1
+  修改HLHUD，删除`+ (void)initialize`方法
+
 - 1.2.0
   修改在主工程中添加HLTool.bundle无效bug
   
