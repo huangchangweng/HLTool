@@ -6,7 +6,7 @@
 //
 
 #import "HLPhotoTool.h"
-#import <HXPhotoPicker/HXPhotoPicker.h>
+#import <HXPhotoPickerObjC/HXPhotoPicker.h>
 #import "HLToastTool.h"
 #import "HLDefine.h"
 #import "HLImagePicker.h"

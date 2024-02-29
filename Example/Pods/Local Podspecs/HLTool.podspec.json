@@ -1,6 +1,6 @@
 {
   "name": "HLTool",
-  "version": "1.1.0",
+  "version": "1.2.2",
   "summary": "iOS开发工具类集合",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/huangchangweng/HLTool",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/huangchangweng/HLTool.git",
-    "tag": "1.1.0"
+    "tag": "1.2.2"
   },
   "platforms": {
     "ios": "10.0"
@@ -105,11 +105,11 @@
         "HLTool/HUD": [
 
         ],
-        "HXPhotoPicker": [
-          "~> 3.2.1"
+        "HXPhotoPickerObjC": [
+          "~> 3.3.4"
         ],
-        "HXPhotoPicker/SDWebImage_AF": [
-          "~> 3.2.1"
+        "HXPhotoPickerObjC/SDWebImage": [
+          "~> 3.3.4"
         ]
       }
     },
