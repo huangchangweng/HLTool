@@ -15,51 +15,52 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - DZNEmptyDataSet (1.8.1)
-  - HLTool (1.2.2):
-    - HLTool/Alert (= 1.2.2)
-    - HLTool/Core (= 1.2.2)
-    - HLTool/EmptyDataSet (= 1.2.2)
-    - HLTool/HUD (= 1.2.2)
-    - HLTool/IBInspectable (= 1.2.2)
-    - HLTool/LoadingView (= 1.2.2)
-    - HLTool/Network (= 1.2.2)
-    - HLTool/Photo (= 1.2.2)
-    - HLTool/Popup (= 1.2.2)
-    - HLTool/Refresh (= 1.2.2)
-  - HLTool/Alert (1.2.2):
+  - HLTool (1.2.3):
+    - HLTool/Alert (= 1.2.3)
+    - HLTool/Core (= 1.2.3)
+    - HLTool/EmptyDataSet (= 1.2.3)
+    - HLTool/HUD (= 1.2.3)
+    - HLTool/IBInspectable (= 1.2.3)
+    - HLTool/LoadingView (= 1.2.3)
+    - HLTool/Network (= 1.2.3)
+    - HLTool/Photo (= 1.2.3)
+    - HLTool/Popup (= 1.2.3)
+    - HLTool/Refresh (= 1.2.3)
+  - HLTool/Alert (1.2.3):
     - HLTool/Core
     - SPAlertController (~> 4.0.0)
-  - HLTool/Core (1.2.2)
-  - HLTool/EmptyDataSet (1.2.2):
+  - HLTool/Core (1.2.3)
+  - HLTool/EmptyDataSet (1.2.3):
     - DZNEmptyDataSet (~> 1.8.1)
     - HLTool/Core
-  - HLTool/HUD (1.2.2):
+  - HLTool/HUD (1.2.3):
     - HLTool/Core
     - MBProgressHUD (~> 1.2.0)
     - Toast (~> 4.0.0)
-  - HLTool/IBInspectable (1.2.2)
-  - HLTool/LoadingView (1.2.2):
+  - HLTool/IBInspectable (1.2.3)
+  - HLTool/LoadingView (1.2.3):
     - HLTool/Core
     - JHUD (~> 0.3.0)
-  - HLTool/Network (1.2.2):
+  - HLTool/Network (1.2.3):
     - AFNetworking (~> 4.0.1)
     - HLTool/Core
     - YYCache (~> 1.0.4)
-  - HLTool/Photo (1.2.2):
+  - HLTool/Photo (1.2.3):
     - HLTool/Alert
     - HLTool/HUD
     - HXPhotoPickerObjC (~> 3.3.4)
-    - HXPhotoPickerObjC/SDWebImage (~> 3.3.4)
-  - HLTool/Popup (1.2.2):
+    - HXPhotoPickerObjC/SDWebImage_AF (~> 3.3.4)
+  - HLTool/Popup (1.2.3):
     - HLTool/Alert
     - YBPopupMenu (~> 1.1.9)
-  - HLTool/Refresh (1.2.2):
+  - HLTool/Refresh (1.2.3):
     - HLTool/Core
     - MJRefresh (~> 3.7.5)
   - HXPhotoPickerObjC (3.3.4):
     - HXPhotoPickerObjC/Default (= 3.3.4)
   - HXPhotoPickerObjC/Default (3.3.4)
-  - HXPhotoPickerObjC/SDWebImage (3.3.4):
+  - HXPhotoPickerObjC/SDWebImage_AF (3.3.4):
+    - AFNetworking
     - SDWebImage (~> 5.0)
   - JHUD (0.3.0)
   - MBProgressHUD (1.2.0)
@@ -96,7 +97,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  HLTool: 11baecb4c9b340c21690ba6b1b566659f739d69c
+  HLTool: 1f7ab815dd8a0817bf848a56d8067d335afff4ed
   HXPhotoPickerObjC: ca01803a5f8d48a43a8283eec2a632cfb0386b37
   JHUD: 17650f65045d9843a7ad19f6a0b1eac6c78a45d2
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406

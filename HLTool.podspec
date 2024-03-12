@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HLTool'
-  s.version          = '1.2.2'
+  s.version          = '1.2.3'
   s.summary          = 'iOS开发工具类集合'
 
 # This description is used to generate tags and improve search results.
@@ -84,7 +84,7 @@ TODO: Add long description of the pod here.
     ss.dependency 'HLTool/Alert'
     ss.dependency 'HLTool/HUD'
     ss.dependency 'HXPhotoPickerObjC', '~> 3.3.4'
-    ss.dependency 'HXPhotoPickerObjC/SDWebImage', '~> 3.3.4'
+    ss.dependency 'HXPhotoPickerObjC/SDWebImage_AF', '~> 3.3.4'
   end
 
   # Popup

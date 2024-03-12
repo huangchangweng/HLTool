@@ -5,7 +5,7 @@ iOS开发工具类集合
 ##### 支持使用CocoaPods引入, Podfile文件中添加:
 
 ```objc
-pod 'HLTool', '1.2.0'
+pod 'HLTool', '1.2.3'
 ```
 
 如果想全局替换HLTool的图片资源，可以在工程中新建一个名字为`HLTool.bundle`的bundle，参照pod中`HLTool.bundle`为图片资源命名。HLCategorys会优先加载当前工程中的图片资源。
@@ -46,13 +46,16 @@ iOS 9.0 +, Xcode 7.0 +
 - "Toast", "4.0.0"
 - "SPAlertController", "4.0.0"
 - "MBProgressHUD", "1.2.0"
-- "HXPhotoPicker", "3.2.1"
+- "HXPhotoPicker", "3.3.4"
 - "YBPopupMenu", "1.1.9"
 - "YYCache", "1.0.4"
 - "JHUD", "0.3.0"
 - "AFNetworking", "4.0.1"
 
 # Version
+
+- 1.2.3
+  解决HXPhotoPicker框架中找不到AFNetworking问题
 
 - 1.2.2
   升级HXPhotoPicker框架
