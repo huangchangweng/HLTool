@@ -143,7 +143,6 @@
     if (placeholders.count > 0) {
         [placeholders enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-                textField.keyboardType = UIKeyboardTypePhonePad;
                 textField.placeholder = obj;
                 [textArr addObject:textField];
             }];

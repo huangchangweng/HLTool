@@ -36,11 +36,11 @@ typedef void (^HLPhotoToolMultipleCompletion)(NSArray <HLPhotoModel *> *images);
 
 
 /// 单张
-+ (void)imagePickerSingleWithController:(UIViewController *)vc seletedVideo:(BOOL)seletedVideo edit:(BOOL)edit completion:(HLPhotoToolCompletion)completion;
++ (void)imagePickerSingleWithController:(UIViewController *)vc openCamera:(BOOL)openCamera seletedVideo:(BOOL)seletedVideo edit:(BOOL)edit completion:(HLPhotoToolCompletion)completion;
 
 
 /// 选择多张图片
-+ (void)imagePickerMultipleWithController:(UIViewController *)vc count:(NSInteger)count seletedVideo:(BOOL)seletedVideo completion:(HLPhotoToolMultipleCompletion)completion;
++ (void)imagePickerMultipleWithController:(UIViewController *)vc openCamera:(BOOL)openCamera count:(NSInteger)count seletedVideo:(BOOL)seletedVideo completion:(HLPhotoToolMultipleCompletion)completion;
 
 
 /// 拍照|视频 默认可编辑

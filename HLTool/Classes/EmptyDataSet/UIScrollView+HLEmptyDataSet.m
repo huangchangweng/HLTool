@@ -167,7 +167,7 @@ static char *kHLEmptyDataSetTapButtonBlockkey = "kHLEmptyDataSetTapButtonBlockke
 }
 
 - (NSString *)hl_customErrorText {
-    return objc_getAssociatedObject(self, &kHLEmptyDataSetCustomErrorTextkey)?:kHLEmptyDataSetNoDataText;
+    return objc_getAssociatedObject(self, &kHLEmptyDataSetCustomErrorTextkey)?:kHLEmptyDataSetCustomErrorText;
 }
 
 - (void)setHl_emptyDataSetType:(HLEmptyDataSetType)hl_emptyDataSetType {

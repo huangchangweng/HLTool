@@ -194,12 +194,12 @@
     
 }
 
-+ (void)imagePickerSingleWithController:(UIViewController *)vc seletedVideo:(BOOL)seletedVideo edit:(BOOL)edit completion:(HLPhotoToolCompletion)completion {
++ (void)imagePickerSingleWithController:(UIViewController *)vc openCamera:(BOOL)openCamera seletedVideo:(BOOL)seletedVideo edit:(BOOL)edit completion:(HLPhotoToolCompletion)completion {
     
     HXPhotoManager *photoManager = [HXPhotoManager managerWithType:seletedVideo?HXPhotoManagerSelectedTypePhotoAndVideo:HXPhotoManagerSelectedTypePhoto];
     photoManager.configuration.maxNum = 1;
     photoManager.configuration.singleSelected = YES;
-    photoManager.configuration.openCamera = NO;
+    photoManager.configuration.openCamera = openCamera;
     photoManager.configuration.videoAutoPlayType = YES;
     photoManager.configuration.photoCanEdit = edit;
     photoManager.configuration.videoCanEdit = edit;
@@ -221,7 +221,7 @@
     
 }
 
-+ (void)imagePickerMultipleWithController:(UIViewController *)vc count:(NSInteger)count seletedVideo:(BOOL)seletedVideo completion:(HLPhotoToolMultipleCompletion)completion {
++ (void)imagePickerMultipleWithController:(UIViewController *)vc openCamera:(BOOL)openCamera count:(NSInteger)count seletedVideo:(BOOL)seletedVideo completion:(HLPhotoToolMultipleCompletion)completion {
     
     HXPhotoManager *photoManager = [HXPhotoManager managerWithType:seletedVideo?HXPhotoManagerSelectedTypePhotoAndVideo:HXPhotoManagerSelectedTypePhoto];
     
@@ -230,7 +230,7 @@
 
     photoManager.configuration.videoAutoPlayType = YES;
     photoManager.configuration.maxNum = count;
-    photoManager.configuration.openCamera = NO;
+    photoManager.configuration.openCamera = openCamera;
     photoManager.configuration.singleSelected = count == 1;
 
     [vc hx_presentSelectPhotoControllerWithManager:photoManager didDone:^(NSArray<HXPhotoModel *> *allList, NSArray<HXPhotoModel *> *photoList, NSArray<HXPhotoModel *> *videoList, BOOL isOriginal, UIViewController *viewController, HXPhotoManager *manager) {
