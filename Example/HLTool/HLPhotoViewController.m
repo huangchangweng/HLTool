@@ -86,8 +86,9 @@
     }
     // 单张
     else if (indexPath.row == 2) {
-        [HLPhotoTool imagePickerSingleWithController:self
-                                        seletedVideo:NO
+        [HLPhotoTool imagePickerSingleWithController:self 
+                                          openCamera:YES
+                                        seletedVideo:YES
                                                 edit:NO
                                           completion:^(HLPhotoModel * _Nonnull model) {
             
@@ -95,9 +96,10 @@
     }
     // 选择多张图片
     else if (indexPath.row == 3) {
-        [HLPhotoTool imagePickerMultipleWithController:self
+        [HLPhotoTool imagePickerMultipleWithController:self 
+                                            openCamera:YES
                                                  count:3
-                                          seletedVideo:NO
+                                          seletedVideo:YES
                                             completion:^(NSArray<HLPhotoModel *> * _Nonnull images) {
             
         }];

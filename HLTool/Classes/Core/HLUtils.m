@@ -7,10 +7,13 @@
 
 #import "HLUtils.h"
 #import <CommonCrypto/CommonDigest.h>
+#import <CommonCrypto/CommonHMAC.h>
+#import <CoreGraphics/CoreGraphics.h>
+#include <sys/mount.h>
 
 @implementation HLUtils
 
-// 获取pp版本
+/// 获取pp版本
 + (NSString *)appVersion
 {
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
@@ -20,7 +23,7 @@
     return app_Version;
 }
 
-// 随机颜色
+/// 随机颜色
 + (UIColor *)randomColor
 {
     CGFloat red = (CGFloat)(arc4random() % 255)/255.0;
@@ -31,7 +34,7 @@
     return color;
 }
 
-// 获取字符串高度
+/// 获取字符串高度
 + (float)heightForString:(NSString *)value
                     font:(UIFont *)font
                    width:(float)width
@@ -50,7 +53,7 @@
     return ceil(textSize.height);
 }
 
-// 获取字符串高度
+/// 获取字符串高度
 + (float)heightForString:(NSString *)value
                     font:(UIFont *)font
                    width:(float)width
@@ -71,7 +74,7 @@
     return ceil(textSize.height);
 }
 
-// 获取字符串宽度
+/// 获取字符串宽度
 + (float)widthForString:(NSString *)value
                    font:(UIFont *)font
                  height:(float)height
@@ -90,7 +93,7 @@
     return ceil(textSize.width);
 }
 
-// md5 加密
+/// md5 加密
 + (NSString *)md5:(NSString *)str
 {
     if (!str) return nil;
@@ -107,14 +110,14 @@
     
 }
 
-// 正则表达式
+/// 正则表达式
 + (BOOL)checkContent:(NSString *)content regex:(NSString *)regex
 {
     NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
     return [pred evaluateWithObject:content];
 }
 
-// 空字符串判断
+/// 空字符串判断
 + (BOOL)isNullOrEmpty:(NSString *)string
 {
     return string == nil
@@ -125,7 +128,7 @@
     || [[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0U;
 }
 
-// date 格式化为 string
+/// date 格式化为 string
 + (NSString *)stringFromFomate:(NSDate*)date
                        formate:(NSString*)formate {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -134,7 +137,7 @@
     return str;
 }
 
-// string 格式化为 date
+/// string 格式化为 date
 + (NSDate *)dateFromFomate:(NSString *)datestring
                    formate:(NSString*)formate {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -143,7 +146,7 @@
     return date;
 }
 
-// 时间戳转时间
+/// 时间戳转时间
 + (NSDate *)dateFromTimestamp:(NSNumber *)timestamp
 {
     if ((!timestamp) || (![timestamp isKindOfClass:[NSNumber class]])) {
@@ -161,7 +164,7 @@
     return date;
 }
 
-// 时间戳转指定格式字符串
+/// 时间戳转指定格式字符串
 + (NSString *)dateStringWithTimestamp:(NSNumber *)timestamp
                               formate:(NSString *)formate
 {
@@ -170,7 +173,7 @@
     return dateString;
 }
 
-// 获取keyWindow，兼容iOS13
+/// 获取keyWindow，兼容iOS13
 + (UIWindow *)getKeyWindow
 {
     if([[[UIApplication sharedApplication] delegate] window]){
@@ -191,7 +194,7 @@
     }
 }
 
-// 当前viewController
+/// 当前viewController
 + (UIViewController *)topViewController
 {
     UIViewController *rootViewController = [HLUtils getKeyWindow].rootViewController;
@@ -216,7 +219,7 @@
     return vc;
 }
 
-// 电话号码中间填充“xxxx”
+/// 电话号码中间填充“xxxx”
 + (NSString *)phoneScarf:(NSString *)phone
 {
     if ([HLUtils checkContent:phone regex:REGEX_PHONE]) {
@@ -226,7 +229,7 @@
     return phone;
 }
 
-// 根据颜色生成图片
+/// 根据颜色生成图片
 + (UIImage *)imageWithColor:(UIColor *)color
                        size:(CGSize)size
 {
@@ -240,7 +243,7 @@
     return image;
 }
 
-// 拨打电话
+/// 拨打电话
 + (void)callPhone:(NSString *)phone
 {
     if ([HLUtils isNullOrEmpty:phone]) {
@@ -251,6 +254,7 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
 }
 
+/// #开头颜色获取
 + (UIColor *)colorWithHexString:(NSString *)color
 {
     if ([HLUtils isNullOrEmpty:color]) {
@@ -297,7 +301,7 @@
     return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];
 }
 
-// 价格格式化
+/// 价格格式化
 + (NSString *)priceFormat:(CGFloat)price
 {
     if (price == 0) {
@@ -307,7 +311,7 @@
     }
 }
 
-// 电话、身份证格式化 (0.电话 1.身份证)
+/// 电话、身份证格式化 (0.电话 1.身份证)
 + (NSString *)desensitization:(NSString *)number
                          type:(HLDesensitizationType)type
 {
@@ -336,7 +340,7 @@
     return str;
 }
 
-// 64base字符串转图片
+/// 64base字符串转图片
 + (UIImage *)stringToImage:(NSString *)str
 {
     if ([HLUtils isNullOrEmpty:str]) {
@@ -352,7 +356,7 @@
     return photo;
 }
 
-// 安全转换URL（解决url中带中文）
+/// 安全转换URL（解决url中带中文）
 + (NSURL *)safeURL:(NSString *)url
 {
     if ([HLUtils isNullOrEmpty:url]) {
@@ -366,7 +370,7 @@
     return [NSURL URLWithString:url];
 }
 
-// 根据下标获取对应大写字母
+/// 根据下标获取对应大写字母
 + (NSString *)letterWithIndex:(NSInteger)index
 {
     NSArray *letterArr = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z"];
@@ -377,11 +381,9 @@
     return letterArr[index];
 }
 
-/**
- *  图片压缩
- *  @param  sourceImage 图片
- *  @param  maxSize     最大尺寸（KB）
- */
+/// 图片压缩
+/// @param  sourceImage 图片
+/// @param  maxSize     最大尺寸（KB）
 + (NSData *)resetSizeOfImageData:(UIImage *)sourceImage
                          maxSize:(NSInteger)maxSize
 {
@@ -433,12 +435,9 @@
     return finallImageData;
 }
 
-/**
- *  剪裁图片
- *  @param  sourceImage 图片
- *  @param  size        剪裁后尺寸
- *
- */
+/// 剪裁图片
+/// @param  sourceImage 图片
+/// @param  size        剪裁后尺寸
 + (UIImage *)newSizeImage:(CGSize)size
                     image:(UIImage *)sourceImage
 {
@@ -460,7 +459,7 @@
     return newImage;
 }
 
-// 二分法
+/// 二分法
 + (NSData *)halfFuntion:(NSArray *)arr
                   image:(UIImage *)image
              sourceData:(NSData *)finallImageData
@@ -498,6 +497,184 @@
         }
     }
     return tempData;
+}
+
+/// 秒转时间
+/// 例：125 -> 02:05
++ (NSString *)timeStrWithSecond:(NSInteger)time
+{
+    if (time > 3600) {
+        return [NSString stringWithFormat:@"%zd:%02zd:%02zd", time/3600, time%3600/60, time%3600%60];
+    } else if (time > 60) {
+        return [NSString stringWithFormat:@"%02zd:%02zd", time/60, time%60];
+    } else {
+        return [NSString stringWithFormat:@"00:%02zd", time];
+    }
+}
+
+/// 高亮字符串中的部分文字
++ (NSMutableAttributedString *)attStr:(NSString *)text
+                          normalColor:(UIColor *)normalColor
+                       highlightTexts:(NSArray<NSString *> *)highlightTexts
+                      highlightColors:(NSArray<UIColor *> *)highlightColors
+                          lineSpacing:(CGFloat)lineSpacing
+                                 font:(UIFont *)font
+{
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] initWithString:text
+                                                                               attributes:@{NSForegroundColorAttributeName: normalColor}];
+    if (lineSpacing > 0) {
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        [paragraphStyle setLineSpacing:lineSpacing];
+        [attStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [text length])];
+    }
+    [attStr addAttributes:@{NSFontAttributeName: font ? : [UIFont systemFontOfSize:15]} range:NSMakeRange(0, [text length])];
+    
+    [highlightTexts enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSRange range = [text rangeOfString:obj];
+        UIColor *color = [UIColor blueColor];
+        if (highlightColors.count == highlightTexts.count) {
+            color = highlightColors[idx];
+        } else if (highlightColors.count == 1) {
+            color = highlightColors.firstObject;
+        }
+        [attStr addAttributes:@{NSForegroundColorAttributeName: color} range:range];
+    }];
+
+    return attStr;
+}
+
+/// 格式化CGFloat（去除多余的0）
+/// 例：0.20 -> 0.2、1.00 -> 1
++ (NSString *)floatToStr:(CGFloat)num
+{
+    return [NSDecimalNumber decimalNumberWithString:[NSString stringWithFormat:@"%f", num]].stringValue;
+}
+
+/// 获取URL中的参数
++ (NSDictionary *)paramerWithURL:(NSURL *)url
+{
+    NSMutableDictionary *paramer = [[NSMutableDictionary alloc]init];
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:url.absoluteString];
+    [urlComponents.queryItems enumerateObjectsUsingBlock:^(NSURLQueryItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [paramer setObject:obj.value forKey:obj.name];
+
+    }];
+    return paramer;
+}
+
+/// 复制字符串到剪切板
++ (void)copyStrToPasteboard:(NSString *)str
+{
+    UIPasteboard *pab = [UIPasteboard generalPasteboard];
+    [pab setString:str];
+}
+
+/// 随机获取数组中一个元素
++ (id)randomWithArray:(NSArray *)arr
+{
+    if (!arr || arr.count == 0) {
+        return nil;
+    }
+    NSInteger index = arc4random() % arr.count;
+    NSString *object = arr[index];
+    return object;
+}
+
+/// base64编码
++ (NSString *)base64Encode:(NSString *)str
+{
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    return [data base64EncodedStringWithOptions:0];
+}
+
+/// base64解码
++ (NSString *)base64Decode:(NSString *)str
+{
+    NSData *data = [[NSData alloc] initWithBase64EncodedString:str options:0];
+    return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
+/// 获取文件／文件夹大小
+/// @param fileName 文件／文件夹路径
+/// @return 大小
++ (int64_t)fileSizeWithFileName:(NSString *)fileName
+{
+     //文件管理者
+     NSFileManager *mgr = [NSFileManager defaultManager];
+     //判断字符串是否为文件/文件夹
+     BOOL dir = NO;
+     BOOL exists = [mgr fileExistsAtPath:fileName isDirectory:&dir];
+    //文件/文件夹不存在
+    if (exists == NO) return 0;
+    //self是文件夹
+    if (dir){
+         //遍历文件夹中的所有内容
+         NSArray *subpaths = [mgr subpathsAtPath:fileName];
+         //计算文件夹大小
+        int64_t totalByteSize = 0;
+         for (NSString *subpath in subpaths){
+                  //拼接全路径
+                   NSString *fullSubPath = [fileName stringByAppendingPathComponent:subpath];
+               //判断是否为文件
+                BOOL dir = NO;
+                [mgr fileExistsAtPath:fullSubPath isDirectory:&dir];
+                 if (dir == NO){//是文件
+                    NSDictionary *attr = [mgr attributesOfItemAtPath:fullSubPath error:nil];
+                    totalByteSize += [attr[NSFileSize] integerValue];
+                }
+            }
+         return totalByteSize;
+        
+    } else{//是文件
+        NSDictionary *attr = [mgr attributesOfItemAtPath:fileName error:nil];
+        return [attr[NSFileSize] floatValue];
+    }
+}
+
+/// 通过文件大小获取显示字符串
++ (NSString *)sizeStringWithFileSize:(int64_t)fileSize
+{
+    CGFloat kb = (CGFloat)fileSize / 1024;
+    CGFloat mb = kb / 1024;
+    CGFloat gb = mb / 1024;
+    if (fileSize < 1024) {// < 1KB
+        return [NSString stringWithFormat:@"%@B", @(fileSize)];
+    } else if (mb < 1) {// < 1MB
+        return [NSString stringWithFormat:@"%.2fK", kb];
+    } else if (gb < 1) {// < 1GB
+        return [NSString stringWithFormat:@"%.2fM", mb];
+    } else { // >= 1GB
+        return [NSString stringWithFormat:@"%.2fG", gb];
+    }
+}
+
+/// 设备剩余空间大小
++ (int64_t)deviceFreeSpace
+{
+    struct statfs buf;
+    int64_t freeSpace = -1;
+    if (statfs("/private/var", &buf) >= 0) {
+        freeSpace = (int64_t)buf.f_bsize * buf.f_bfree;
+    }
+    return freeSpace;
+}
+
+/// 设备空间总大小
++ (int64_t)deviceTotalSpace
+{
+    struct statfs buf;
+    int64_t totalSpace = -1;
+    if (statfs("/private/var", &buf) >= 0) {
+        totalSpace = (int64_t)buf.f_bsize * buf.f_blocks;
+    }
+    return totalSpace;
+}
+
+/// 清除字符中串空格
++ (NSString *)clearStringSpace:(NSString *)str
+{
+    NSString *newStr = [[str stringByReplacingOccurrencesOfString:@"  " withString:@""] stringByReplacingOccurrencesOfString:@" " withString:@""];
+    return newStr;
 }
 
 @end
