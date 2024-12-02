@@ -54,6 +54,9 @@ iOS 9.0 +, Xcode 7.0 +
 
 # Version
 
+- 1.2.6
+  修改HLNetworkManager代码
+
 - 1.2.5
   HLUtils类中添加更多工具方法
 

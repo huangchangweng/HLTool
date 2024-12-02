@@ -228,7 +228,7 @@ static AFHTTPSessionManager *_sessionManager;
                                 headers:(NSDictionary <NSString *, NSString *> *)headers
                                    name:(NSString *)name
                                filePath:(NSString *)filePath
-                               progress:(HLHttHLrogress)progress
+                               progress:(HLHttpProgress)progress
                                 success:(HLHttpRequestSuccess)success
                                 failure:(HLHttpRequestFailed)failure {
     
@@ -276,8 +276,8 @@ static AFHTTPSessionManager *_sessionManager;
                                              name:(NSString *)name
                                         fileDatas:(NSArray<NSData *> *)fileDatas
                                         fileNames:(NSArray<NSString *> *)fileNames
-                                         mimeType:(NSString *)mimeType
-                                         progress:(HLHttHLrogress)progress
+                                        mimeTypes:(NSArray<NSString *> *)mimeTypes
+                                         progress:(HLHttpProgress)progress
                                           success:(HLHttpRequestSuccess)success
                                           failure:(HLHttpRequestFailed)failure {
     
@@ -291,11 +291,14 @@ static AFHTTPSessionManager *_sessionManager;
         if (fileDatas.count != fileNames.count) {
             [[NSException exceptionWithName:@"长度异常" reason:@"文件个数与文件名个数不相等" userInfo:nil] raise];
         }
+        if (fileDatas.count != mimeTypes.count) {
+            [[NSException exceptionWithName:@"长度异常" reason:@"文件个数与mimeType个数不相等" userInfo:nil] raise];
+        }
         for (NSUInteger i = 0; i < fileDatas.count; i++) {
             [formData appendPartWithFileData:fileDatas[i]
                                         name:name
                                     fileName:fileNames[i]
-                                    mimeType:mimeType];
+                                    mimeType:mimeTypes[i]];
         }
         
     } progress:^(NSProgress * _Nonnull uploadProgress) {
@@ -324,7 +327,7 @@ static AFHTTPSessionManager *_sessionManager;
 
 + (NSURLSessionTask *)downloadWithURL:(NSString *)URL
                               fileDir:(NSString *)fileDir
-                             progress:(HLHttHLrogress)progress
+                             progress:(HLHttpProgress)progress
                               success:(void(^)(NSString *))success
                               failure:(HLHttpRequestFailed)failure {
     

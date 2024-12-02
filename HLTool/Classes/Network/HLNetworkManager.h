@@ -48,7 +48,7 @@ typedef void(^HLHttpRequestFailed)(NSError *error);
 typedef void(^HLHttpRequestCache)(id cacheObject);
 
 /// 上传或者下载的进度, Progress.completedUnitCount:当前大小 - Progress.totalUnitCount:总大小
-typedef void (^HLHttHLrogress)(NSProgress *progress);
+typedef void (^HLHttpProgress)(NSProgress *progress);
 
 @interface HLNetworkManager : NSObject
 
@@ -107,7 +107,7 @@ typedef void (^HLHttHLrogress)(NSProgress *progress);
                                          headers:(NSDictionary <NSString *, NSString *> *)headers
                                             name:(NSString *)name
                                         filePath:(NSString *)filePath
-                                        progress:(HLHttHLrogress)progress
+                                        progress:(HLHttpProgress)progress
                                          success:(HLHttpRequestSuccess)success
                                          failure:(HLHttpRequestFailed)failure;
 
@@ -119,7 +119,7 @@ typedef void (^HLHttHLrogress)(NSProgress *progress);
  *  @param name       文件对应服务器上的字段
  *  @param fileDatas  文件数组
  *  @param fileNames  文件名数组, 可以为nil, 数组内的文件名默认为当前日期时间"yyyyMMddHHmmss"
- *  @param mimeType   image/jpeg、video/mp4等...
+ *  @param mimeTypes  image/jpeg、video/mp4等...
  *  @param progress   上传进度信息
  *  @param success    请求成功的回调
  *  @param failure    请求失败的回调
@@ -132,8 +132,8 @@ typedef void (^HLHttHLrogress)(NSProgress *progress);
                                              name:(NSString *)name
                                         fileDatas:(NSArray<NSData *> *)fileDatas
                                         fileNames:(NSArray<NSString *> *)fileNames
-                                         mimeType:(NSString *)mimeType
-                                         progress:(HLHttHLrogress)progress
+                                        mimeTypes:(NSArray<NSString *> *)mimeTypes
+                                         progress:(HLHttpProgress)progress
                                           success:(HLHttpRequestSuccess)success
                                           failure:(HLHttpRequestFailed)failure;
 
@@ -150,7 +150,7 @@ typedef void (^HLHttHLrogress)(NSProgress *progress);
  */
 + (__kindof NSURLSessionTask *)downloadWithURL:(NSString *)URL
                                        fileDir:(NSString *)fileDir
-                                      progress:(HLHttHLrogress)progress
+                                      progress:(HLHttpProgress)progress
                                        success:(void(^)(NSString *filePath))success
                                        failure:(HLHttpRequestFailed)failure;
 
